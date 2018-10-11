@@ -2,12 +2,15 @@ package redone.world;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import redone.event.CycleEvent;
 import redone.event.CycleEventContainer;
 import redone.event.CycleEventHandler;
+import redone.game.database.MySQLDatabase;
 import redone.game.players.Client;
 import redone.game.players.Player;
 import redone.game.players.PlayerHandler;
@@ -33,48 +36,51 @@ public class GlobalDropsHandler {
 	/**
 	 * loads the items
 	 */
-	public static void initialize() {
-		String Data;
-		BufferedReader Checker;
+	public static void initialize()
+	{
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `globaldrops`;");
+		
 		try {
-			Checker = new BufferedReader(new FileReader(
-					"./Data/cfg/globaldrops.txt"));
-			while ((Data = Checker.readLine()) != null) {
-				if (Data.startsWith("#")) {
-					continue;
-				}
-				String[] args = Data.split(":");
-				globalDrops.add(new GlobalDrop(Integer.parseInt(args[0]),
-						Integer.parseInt(args[1]), Integer.parseInt(args[2]),
-						Integer.parseInt(args[3])));
+			while(rs.next())
+			{
+				globalDrops.add(new GlobalDrop(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4)));
 			}
-			Checker.close();
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		Misc.println("Loaded " + globalDrops.size() + " global drops.");
 
-	for (Player player : PlayerHandler.players) {
-		final Client client = (Client) player;
-		if (client != null) {
-		   CycleEventHandler.getSingleton().addEvent(client, new CycleEvent() {
+		for (Player player : PlayerHandler.players)
+		{
+			final Client client = (Client) player;
+			if (client != null)
+			{
+				CycleEventHandler.getSingleton().addEvent(client, new CycleEvent()
+				{
 	            @Override
-	            public void execute(CycleEventContainer container) {
-				for (GlobalDrop drop : globalDrops) {
-					if (drop.isTaken()) {
-						if (System.currentTimeMillis() - drop.getTakenAt() >= TIME_TO_RESPAWN * 1000) {
-							drop.setTaken(false);
-								if (client.distanceToPoint(drop.getX(), drop.getY()) <= 60) {
-									client.getActionSender().createGroundItem(drop.getId(), drop.getX(), drop.getY(), drop.getAmount(), 0);
+	            public void execute(CycleEventContainer container)
+	            {
+	            	for (GlobalDrop drop : globalDrops)
+	            	{
+	            		if (drop.isTaken())
+	            		{
+	            			if (System.currentTimeMillis() - drop.getTakenAt() >= TIME_TO_RESPAWN * 1000)
+	            			{
+	            				drop.setTaken(false);
+									if (client.distanceToPoint(drop.getX(), drop.getY()) <= 60) {
+										client.getActionSender().createGroundItem(drop.getId(), drop.getX(), drop.getY(), drop.getAmount(), 0);
+									}
 								}
 							}
 						}
 					}
-				}
-	            @Override
-				public void stop() {
-					// TODO Auto-generated method stub
-				}
+	            	@Override
+	            	public void stop() {
+	            		// TODO Auto-generated method stub
+	            	}
 				}, 1);
 			}
 		}
