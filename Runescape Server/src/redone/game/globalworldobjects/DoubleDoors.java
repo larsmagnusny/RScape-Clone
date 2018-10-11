@@ -3,11 +3,14 @@ package redone.game.globalworldobjects;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import redone.Server;
+import redone.game.database.MySQLDatabase;
 import redone.game.objects.Objects;
 
 /**
@@ -17,21 +20,22 @@ import redone.game.objects.Objects;
  */
 public class DoubleDoors {
 	
-	private static DoubleDoors singleton = null;
+	private static DoubleDoors mInstance = null;
 
 	private List<DoubleDoors> doors = new ArrayList<DoubleDoors>();
 
 	private File doorFile;
 	
-	public static DoubleDoors getSingleton() {
-		if (singleton == null) {
-			singleton = new DoubleDoors("./data/doubledoors.txt");
+	public static DoubleDoors getInstance() {
+		if (mInstance == null) {
+			mInstance = new DoubleDoors();
 		}
-		return singleton;
+		return mInstance;
 	}
 
-	private DoubleDoors(String file){
-		doorFile = new File(file);  
+	private DoubleDoors()
+	{
+
 	}
 	
 	private DoubleDoors getDoor(int id, int x, int y, int z) {
@@ -348,40 +352,27 @@ public class DoubleDoors {
 	};
 	
 	public void load() {
-		//long start = System.currentTimeMillis();
+		long start = System.currentTimeMillis();
+		
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `doubledoors`;");
+		
 		try {
-			singleton.processLineByLine();
-		} catch (FileNotFoundException e) {
+			while(rs.next())
+			{
+				int id = rs.getInt(1);
+				int x = rs.getInt(2);
+				int y = rs.getInt(3);
+				int f = rs.getInt(4);
+				int z = rs.getInt(5);
+				
+				doors.add(new DoubleDoors(id, x, y, z, f, isOpenDoor(id) ? 1 : 0));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println("Loaded "+ doors.size() +" Double doors in "+ (System.currentTimeMillis() - start) +"ms.");
-	}
-	
-	private final void processLineByLine() throws FileNotFoundException {
-		Scanner scanner = new Scanner(new FileReader(doorFile));
-	    	try {
-	    		while(scanner.hasNextLine()) {
-	    			processLine(scanner.nextLine());
-	    		}
-	  	 } finally {
-	    		scanner.close();
-	  	 }
-	}
-	
-	protected void processLine(String line){
-		Scanner scanner = new Scanner(line);
-		scanner.useDelimiter(" ");
-		try {
-			while(scanner.hasNextLine()) {
-				int id = Integer.parseInt(scanner.next());
-				int x = Integer.parseInt(scanner.next());
-				int y = Integer.parseInt(scanner.next());
-		    		int f = Integer.parseInt(scanner.next());
-		    		int z = Integer.parseInt(scanner.next());
-		    		doors.add(new DoubleDoors(id, x, y, z, f, isOpenDoor(id) ? 1 : 0));
-			}
-		} finally {
-			scanner.close();
-		}
+		
+		System.out.println("Loaded "+ doors.size() +" Double doors in "+ (System.currentTimeMillis() - start) +"ms.");
 	}
 }

@@ -19,7 +19,7 @@ public class ChangeRegions implements PacketType {
 			Music.playMusic(c);
 		}
 		Server.objectHandler.updateObjects(c);//testing
-		Doors.getSingleton().load();
+		Doors.getInstance().load();
 		Server.itemHandler.reloadItems(c);
 		Server.objectManager.loadObjects(c);
 		GlobalDropsHandler.load(c);

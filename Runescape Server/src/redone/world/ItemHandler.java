@@ -5,11 +5,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import redone.Constants;
+import redone.game.database.MySQLDatabase;
 import redone.game.items.GroundItem;
 import redone.game.items.ItemAssistant;
 import redone.game.items.ItemList;
@@ -32,8 +35,8 @@ public class ItemHandler {
 		for (int i = 0; i < Constants.ITEM_LIMIT; i++) {
 			ItemList[i] = null;
 		}
-		loadItemList("item.cfg");
-		loadItemPrices("prices.txt");
+		loadItemList();
+		loadItemPrices();
 	}
 
 	/**
@@ -344,18 +347,20 @@ public int itemAmount(String name, int itemId, int itemX, int itemY) {
 		ItemList[slot] = newItemList;
 	}
 
-	public void loadItemPrices(String filename) {
+	public void loadItemPrices() {
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `prices`;");
+		
 		try {
-			@SuppressWarnings("resource")
-			Scanner s = new Scanner(new File("./data/cfg/" + filename));
-			while (s.hasNextLine()) {
-				String[] line = s.nextLine().split(" ");
-				ItemList temp = getItemList(Integer.parseInt(line[0]));
-				if (temp != null) {
-					temp.ShopValue = Integer.parseInt(line[1]);
-				}
+			while(rs.next())
+			{
+				ItemList temp = getItemList(rs.getInt(1));
+				
+				if(temp != null)
+					temp.ShopValue = rs.getInt(2);
 			}
-		} catch (IOException e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -371,75 +376,28 @@ public int itemAmount(String name, int itemId, int itemX, int itemY) {
 		return null;
 	}
 
-	public boolean loadItemList(String FileName) {
-		String line = "";
-		String token = "";
-		String token2 = "";
-		String token2_2 = "";
-		String[] token3 = new String[10];
-		boolean EndOfFile = false;
-		BufferedReader characterfile = null;
+	public boolean loadItemList() 
+	{
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `items`;");
+
 		try {
-			characterfile = new BufferedReader(new FileReader("./Data/cfg/"
-					+ FileName));
-		} catch (FileNotFoundException fileex) {
-			Misc.println(FileName + ": file not found.");
-			return false;
-		}
-		try {
-			line = characterfile.readLine();
-		} catch (IOException ioexception) {
-			Misc.println(FileName + ": error loading file.");
-			// return false;
-		}
-		while (EndOfFile == false && line != null) {
-			line = line.trim();
-			int spot = line.indexOf("=");
-			if (spot > -1) {
-				token = line.substring(0, spot);
-				token = token.trim();
-				token2 = line.substring(spot + 1);
-				token2 = token2.trim();
-				token2_2 = token2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token3 = token2_2.split("\t");
-				if (token.equals("item")) {
-					int[] Bonuses = new int[12];
-					for (int i = 0; i < 12; i++) {
-						if (token3[6 + i] != null) {
-							Bonuses[i] = Integer.parseInt(token3[6 + i]);
-						} else {
-							break;
-						}
-					}
-					newItemList(Integer.parseInt(token3[0]),
-							token3[1].replaceAll("_", " "),
-							token3[2].replaceAll("_", " "),
-							Double.parseDouble(token3[4]),
-							Double.parseDouble(token3[4]),
-							Double.parseDouble(token3[6]), Bonuses);
-				}
-			} else {
-				if (line.equals("[ENDOFITEMLIST]")) {
-					try {
-						characterfile.close();
-					} catch (IOException ioexception) {
-					}
-					//return true;
-				}
+			while(rs.next())
+			{
+				int[] bonuses = new int[]{rs.getInt(7),rs.getInt(8),rs.getInt(9),rs.getInt(10),rs.getInt(11),rs.getInt(12),rs.getInt(13),rs.getInt(14),rs.getInt(15),rs.getInt(16),rs.getInt(17),rs.getInt(18)};
+				newItemList(rs.getInt(1),
+							rs.getString(2).replaceAll("_", " "),
+							rs.getString(3).replaceAll("_", " "),
+							rs.getDouble(4),
+							rs.getDouble(5),
+							rs.getDouble(6),
+							bonuses);
 			}
-			try {
-				line = characterfile.readLine();
-			} catch (IOException ioexception1) {
-				EndOfFile = true;
-			}
-		}
-		try {
-			characterfile.close();
-		} catch (IOException ioexception) {
+			
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return false;
 	}

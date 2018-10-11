@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import redone.game.database.MySQLDatabase;
 import redone.game.players.PlayerHandler;
 import redone.util.Misc;
 
@@ -41,7 +44,7 @@ public class ShopHandler {
 			ShopName[i] = "";
 		}
 		TotalShops = 0;
-		loadShops("shops.cfg");
+		loadShops();
 	}
 	
 	public static int restockTimeItem(int itemId) {
@@ -105,74 +108,33 @@ public class ShopHandler {
 	}
 
 
-	public boolean loadShops(String FileName) {
-		String line = "";
-		String token = "";
-		String token2 = "";
-		String token2_2 = "";
-		String[] token3 = new String[(MaxShopItems * 2)];
-		boolean EndOfFile = false;
-		BufferedReader characterfile = null;
+	public boolean loadShops() {
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `shops`;");
+		
 		try {
-			characterfile = new BufferedReader(new FileReader("./Data/CFG/" + FileName));
-		} catch (FileNotFoundException fileex) {
-			Misc.println(FileName + ": file not found.");
-			return false;
-		}
-		try {
-			line = characterfile.readLine();
-		} catch (IOException ioexception) {
-			Misc.println(FileName + ": error loading file.");
-		}
-		while (EndOfFile == false && line != null) {
-			line = line.trim();
-			int spot = line.indexOf("=");
-			if (spot > -1) {
-				token = line.substring(0, spot);
-				token = token.trim();
-				token2 = line.substring(spot + 1);
-				token2 = token2.trim();
-				token2_2 = token2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token3 = token2_2.split("\t");
-				if (token.equals("shop")) {
-					int ShopID = Integer.parseInt(token3[0]);
-					ShopName[ShopID] = token3[1].replaceAll("_", " ");
-					ShopSModifier[ShopID] = Integer.parseInt(token3[2]);
-					ShopBModifier[ShopID] = Integer.parseInt(token3[3]);
-					for (int i = 0; i < ((token3.length - 4) / 2); i++) {
-						if (token3[(4 + (i * 2))] != null) {
-							ShopItems[ShopID][i] = (Integer.parseInt(token3[(4 + (i * 2))]) + 1);
-							ShopItemsN[ShopID][i] = Integer.parseInt(token3[(5 + (i * 2))]);
-							ShopItemsSN[ShopID][i] = Integer.parseInt(token3[(5 + (i * 2))]);
-							ShopItemsStandard[ShopID]++;
-						} else {
-							break;
-						}
-					}
-					TotalShops++;
-				}
-			} else {
-				if (line.equals("[ENDOFSHOPLIST]")) {
-					try {
-						characterfile.close();
-					} catch (IOException ioexception) {
-					}
+			while(rs.next())
+			{
+				int ShopID = rs.getInt(1);
+				ShopName[ShopID] = rs.getString(2).replaceAll("_", " ");
+				ShopSModifier[ShopID] = rs.getInt(3);
+				ShopBModifier[ShopID] = rs.getInt(4);
+
+				for(int i = 0; i < 18; i++)
+				{
+					ShopItems[ShopID][i] = rs.getInt(5 + 2 * i);
+					ShopItemsN[ShopID][i] = rs.getInt(6 + 2 * i);
+					ShopItemsSN[ShopID][i] = rs.getInt(6 + 2 * i);
+					ShopItemsStandard[ShopID]++;
 				}
 			}
-			try {
-				line = characterfile.readLine();
-			} catch (IOException ioexception1) {
-				EndOfFile = true;
-			}
+			
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		try {
-			characterfile.close();
-		} catch (IOException ioexception) {
-		}
+		
 		return false;
 	}
 }

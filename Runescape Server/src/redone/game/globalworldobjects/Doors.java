@@ -3,30 +3,34 @@ package redone.game.globalworldobjects;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import redone.Server;
+import redone.game.database.MySQLDatabase;
 import redone.game.objects.Objects;
 
 
 
 public class Doors {
 
-	private static Doors singleton = null;
+	private static Doors mInstance = null;
 
 	private List<Doors> doors = new ArrayList<Doors>();
 
 	private File doorFile;
 	
-	public static Doors getSingleton() {
-		if (singleton == null) {
-			singleton = new Doors("./data/doors.txt");
+	public static Doors getInstance() {
+		if (mInstance == null) {
+			mInstance = new Doors();
 		}
-		return singleton;
+		return mInstance;
 	}
 
-	private Doors(String file){
-		doorFile = new File(file);  
+	private Doors()
+	{
+
 	}
 	
 	private Doors(int door, int x, int y, int z, int face, int type, int open) {
@@ -59,7 +63,7 @@ public class Doors {
 		Doors d = getDoor(id, x, y, z);
 		
 		if (d == null) {
-			if (DoubleDoors.getSingleton().handleDoor(id, x, y, z)) {
+			if (DoubleDoors.getInstance().handleDoor(id, x, y, z)) {
 				return true;
 			}
 			return false;
@@ -200,42 +204,28 @@ public class Doors {
 	}
 	
 	public void load() {
-		//long start = System.currentTimeMillis();
+		long start = System.currentTimeMillis();
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `doors`;");
+		
 		try {
-			singleton.processLineByLine();
-		} catch (FileNotFoundException e) {
+			while(rs.next())
+			{
+				int id = rs.getInt(1);
+				int x = rs.getInt(2);
+				int y = rs.getInt(3);
+				int f = rs.getInt(4);
+				int z = rs.getInt(5);
+				int t = rs.getInt(6);
+				
+				doors.add(new Doors(id, x, y, z, f, t, alreadyOpen(id)?1:0));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println("Loaded "+ doors.size() +" doors in "+ (System.currentTimeMillis() - start) +"ms.");
-	}
-	
-	private final void processLineByLine() throws FileNotFoundException {
-		Scanner scanner = new Scanner(new FileReader(doorFile));
-	    	try {
-	    		while(scanner.hasNextLine()) {
-	    			processLine(scanner.nextLine());
-	    		}
-	  	 } finally {
-	    		scanner.close();
-	    	}
-	}
-	
-	protected void processLine(String line){
-		Scanner scanner = new Scanner(line);
-		scanner.useDelimiter(" ");
-		try {
-			while(scanner.hasNextLine()) {
-				int id = Integer.parseInt(scanner.next());
-				int x = Integer.parseInt(scanner.next());
-		    		int y = Integer.parseInt(scanner.next());
-		    		int f = Integer.parseInt(scanner.next());
-		    		int z = Integer.parseInt(scanner.next());
-		    		int t = Integer.parseInt(scanner.next());
-		    		doors.add(new Doors(id,x,y,z,f,t,alreadyOpen(id)?1:0));
-			}
-		} finally {
-			scanner.close();
-		}
+		
+		System.out.println("Loaded "+ doors.size() +" doors in "+ (System.currentTimeMillis() - start) +"ms.");
 	}
 	
 	private boolean alreadyOpen(int id) {

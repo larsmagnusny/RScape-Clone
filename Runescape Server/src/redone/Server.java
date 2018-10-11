@@ -122,8 +122,8 @@ public class Server
 		 */
 		ObjectDef.loadConfig();
 		Region.load();
-		Doors.getSingleton().load();
-		DoubleDoors.getSingleton().load();
+		Doors.getInstance().load();
+		DoubleDoors.getInstance().load();
 		ItemDefinitions.read();
 		GlobalDropsHandler.initialize();
 		Connection.initialize();

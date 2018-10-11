@@ -39,7 +39,7 @@ public class ClickObject implements PacketType {
 				player.getActionSender().sendMessage("ObjectId: " + player.objectId + " ObjectX: " + player.objectX + " ObjectY: " + player.objectY + " Objectclick = 1, Xoff: " + (player.getX() - player.objectX) + " Yoff: " + (player.getY() - player.objectY));
 			}
 			if(player.goodDistance(player.getX(), player.getY(), player.objectX, player.objectY, 1)) {
-				if (Doors.getSingleton().handleDoor(player.objectId, player.objectX, player.objectY, player.heightLevel)) {
+				if (Doors.getInstance().handleDoor(player.objectId, player.objectX, player.objectY, player.heightLevel)) {
 				}
 			}
 			
