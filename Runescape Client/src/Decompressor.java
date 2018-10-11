@@ -74,7 +74,7 @@ final class Decompressor {
 		}
 	}
 
-	public synchronized boolean method234(int i, byte abyte0[], int j)
+	public synchronized boolean decompressSound(int i, byte abyte0[], int j)
 	{
 		boolean flag = method235(true, j, i, abyte0);
 		if(!flag)

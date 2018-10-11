@@ -102,7 +102,7 @@ public final class OnDemandFetcher extends OnDemandFetcherParent implements Runn
 				}
 				if (expectedSize + completedSize >= abyte0.length && current != null) {
 					if (clientInstance.decompressors[0] != null) {
-						clientInstance.decompressors[current.dataType + 1].method234(abyte0.length, abyte0, current.ID);
+						clientInstance.decompressors[current.dataType + 1].decompressSound(abyte0.length, abyte0, current.ID);
 					}
 					if (!current.incomplete && current.dataType == 3) {
 						current.incomplete = true;
@@ -199,7 +199,7 @@ public final class OnDemandFetcher extends OnDemandFetcherParent implements Runn
 
 		clientInstance = client1;
 		running = true;
-		clientInstance.startRunnable(this, 2);
+		clientInstance.startRunnableThread(this, 2);
 	}
 
 	public int getNodeCount() {
@@ -276,7 +276,7 @@ public final class OnDemandFetcher extends OnDemandFetcherParent implements Runn
 		return anIntArray1360.length;
 	}
 
-	public void method558(int i, int j) {
+	public void getSongFromIndex(int i, int j) {
 		if (i < 0 || i > versions.length || j < 0 || j > versions[i].length) {
 			return;
 		}
@@ -469,7 +469,7 @@ public final class OnDemandFetcher extends OnDemandFetcherParent implements Runn
 
 	@Override
 	public void method548(int i) {
-		method558(0, i);
+		getSongFromIndex(0, i);
 	}
 
 	public void method563(byte byte0, int i, int j) {

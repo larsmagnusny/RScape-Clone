@@ -31,3 +31,193 @@
 [2018/10/11] 12:22 username dropped 1 tin ore absX: 3246 absY: 3236
 [2018/10/11] 12:22 username dropped 7 body rune absX: 3246 absY: 3236
 [2018/10/11] 12:22 username dropped 1 bronze kiteshield absX: 3246 absY: 3236
+[2018/10/11] 16:43 username dropped 1 swamp tar absX: 3191 absY: 3162
+[2018/10/11] 16:45 username dropped 1 unicorn horn absX: 3135 absY: 3217
+[2018/10/11] 16:45 username dropped 1 unicorn horn absX: 3134 absY: 3217
+[2018/10/11] 16:47 username dropped 2 air rune absX: 3147 absY: 3246
+[2018/10/11] 16:49 username dropped 4 body rune absX: 3140 absY: 3256
+[2018/10/11] 16:55 username dropped 1 logs absX: 3037 absY: 3278
+[2018/10/11] 16:55 username dropped 1 ashes absX: 3037 absY: 3294
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3039 absY: 3296
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3036 absY: 3300
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3036 absY: 3300
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 ashes absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 cowhide absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 raw beef absX: 3035 absY: 3300
+[2018/10/11] 16:56 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 16:56 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 16:57 username dropped 1 cowhide absX: 3027 absY: 3300
+[2018/10/11] 16:57 username dropped 1 raw beef absX: 3027 absY: 3300
+[2018/10/11] 16:57 username dropped 1 cowhide absX: 3029 absY: 3299
+[2018/10/11] 16:57 username dropped 1 raw beef absX: 3029 absY: 3299
+[2018/10/11] 16:59 username dropped 1 cowhide absX: 3028 absY: 3299
+[2018/10/11] 16:59 username dropped 1 raw beef absX: 3028 absY: 3299
+[2018/10/11] 16:59 username dropped 1 cowhide absX: 3026 absY: 3300
+[2018/10/11] 16:59 username dropped 1 raw beef absX: 3026 absY: 3300
+[2018/10/11] 16:59 username dropped 1 cowhide absX: 3025 absY: 3300
+[2018/10/11] 16:59 username dropped 1 cowhide absX: 3029 absY: 3300
+[2018/10/11] 16:59 username dropped 1 raw beef absX: 3029 absY: 3300
+[2018/10/11] 17:00 username dropped 1 cowhide absX: 3031 absY: 3300
+[2018/10/11] 17:00 username dropped 1 raw beef absX: 3031 absY: 3300
+[2018/10/11] 17:01 username dropped 1 cowhide absX: 3033 absY: 3301
+[2018/10/11] 17:01 username dropped 1 raw beef absX: 3033 absY: 3301
+[2018/10/11] 17:01 username dropped 1 cowhide absX: 3032 absY: 3301
+[2018/10/11] 17:01 username dropped 1 raw beef absX: 3032 absY: 3301
+[2018/10/11] 17:01 username dropped 1 cowhide absX: 3035 absY: 3301
+[2018/10/11] 17:01 username dropped 1 raw beef absX: 3035 absY: 3301
+[2018/10/11] 17:02 username dropped 1 cowhide absX: 3031 absY: 3300
+[2018/10/11] 17:02 username dropped 1 raw beef absX: 3031 absY: 3300
+[2018/10/11] 17:02 username dropped 1 cowhide absX: 3027 absY: 3299
+[2018/10/11] 17:02 username dropped 1 raw beef absX: 3027 absY: 3299
+[2018/10/11] 17:02 username dropped 1 raw beef absX: 3032 absY: 3300
+[2018/10/11] 17:03 username dropped 1 cowhide absX: 3032 absY: 3300
+[2018/10/11] 17:03 username dropped 1 raw beef absX: 3032 absY: 3300
+[2018/10/11] 17:03 username dropped 1 cowhide absX: 3034 absY: 3300
+[2018/10/11] 17:03 username dropped 1 raw beef absX: 3034 absY: 3300
+[2018/10/11] 17:03 username dropped 1 logs absX: 3039 absY: 3300
+[2018/10/11] 17:04 username dropped 1 ashes absX: 3038 absY: 3300
+[2018/10/11] 17:04 username dropped 1 logs absX: 3039 absY: 3299
+[2018/10/11] 17:04 username dropped 1 burnt meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 burnt meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 burnt meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 burnt meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 burnt meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 cooked meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 cooked meat absX: 3038 absY: 3299
+[2018/10/11] 17:04 username dropped 1 cooked meat absX: 3038 absY: 3299
+[2018/10/11] 17:05 username dropped 1 ashes absX: 3038 absY: 3299
+[2018/10/11] 17:05 username dropped 1 cooked meat absX: 3038 absY: 3299
+[2018/10/11] 17:05 username dropped 1 cooked meat absX: 3038 absY: 3299
+[2018/10/11] 17:05 username dropped 1 cowhide absX: 3038 absY: 3299
+[2018/10/11] 17:05 username dropped 1 raw beef absX: 3038 absY: 3299
+[2018/10/11] 17:06 username dropped 1 cowhide absX: 3038 absY: 3299
+[2018/10/11] 17:06 username dropped 1 raw beef absX: 3038 absY: 3299
+[2018/10/11] 17:07 username dropped 1 cowhide absX: 3035 absY: 3301
+[2018/10/11] 17:07 username dropped 1 raw beef absX: 3035 absY: 3301
+[2018/10/11] 17:07 username dropped 1 cowhide absX: 3032 absY: 3301
+[2018/10/11] 17:07 username dropped 1 raw beef absX: 3032 absY: 3301
+[2018/10/11] 17:08 username dropped 1 cowhide absX: 3031 absY: 3300
+[2018/10/11] 17:08 username dropped 1 raw beef absX: 3031 absY: 3300
+[2018/10/11] 17:10 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 17:10 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 17:10 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 17:10 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 17:11 username dropped 1 cowhide absX: 3033 absY: 3299
+[2018/10/11] 17:11 username dropped 1 raw beef absX: 3033 absY: 3299
+[2018/10/11] 17:11 username dropped 1 cowhide absX: 3032 absY: 3299
+[2018/10/11] 17:11 username dropped 1 raw beef absX: 3032 absY: 3299
+[2018/10/11] 17:11 username dropped 1 cowhide absX: 3028 absY: 3298
+[2018/10/11] 17:11 username dropped 1 raw beef absX: 3028 absY: 3298
+[2018/10/11] 17:12 username dropped 1 cowhide absX: 3029 absY: 3300
+[2018/10/11] 17:12 username dropped 1 raw beef absX: 3029 absY: 3300
+[2018/10/11] 17:12 username dropped 1 cowhide absX: 3033 absY: 3300
+[2018/10/11] 17:12 username dropped 1 raw beef absX: 3033 absY: 3300
+[2018/10/11] 17:13 username dropped 1 cowhide absX: 3031 absY: 3299
+[2018/10/11] 17:13 username dropped 1 raw beef absX: 3031 absY: 3299
+[2018/10/11] 17:13 username dropped 1 cowhide absX: 3026 absY: 3299
+[2018/10/11] 17:13 username dropped 1 raw beef absX: 3026 absY: 3299
+[2018/10/11] 17:14 username dropped 1 cowhide absX: 3028 absY: 3299
+[2018/10/11] 17:14 username dropped 1 raw beef absX: 3028 absY: 3299
+[2018/10/11] 17:14 username dropped 1 cowhide absX: 3027 absY: 3299
+[2018/10/11] 17:14 username dropped 1 raw beef absX: 3027 absY: 3299
+[2018/10/11] 17:14 username dropped 1 cowhide absX: 3029 absY: 3299
+[2018/10/11] 17:14 username dropped 1 raw beef absX: 3029 absY: 3299
+[2018/10/11] 17:15 username dropped 1 raw beef absX: 3034 absY: 3301
+[2018/10/11] 17:15 username dropped 1 logs absX: 3039 absY: 3300
+[2018/10/11] 17:16 username dropped 1 ashes absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 logs absX: 3039 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 burnt meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 cooked meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 cooked meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 cooked meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 cooked meat absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 ashes absX: 3038 absY: 3300
+[2018/10/11] 17:16 username dropped 1 cooked meat absX: 3038 absY: 3300
+[2018/10/11] 17:17 username dropped 1 cowhide absX: 3035 absY: 3299
+[2018/10/11] 17:17 username dropped 1 raw beef absX: 3035 absY: 3299
+[2018/10/11] 17:17 username dropped 1 raw beef absX: 3036 absY: 3300
+[2018/10/11] 17:17 username dropped 1 cowhide absX: 3032 absY: 3301
+[2018/10/11] 17:17 username dropped 1 raw beef absX: 3032 absY: 3301
+[2018/10/11] 17:18 username dropped 1 cowhide absX: 3033 absY: 3301
+[2018/10/11] 17:18 username dropped 1 raw beef absX: 3033 absY: 3301
+[2018/10/11] 17:18 username dropped 1 cowhide absX: 3032 absY: 3300
+[2018/10/11] 17:18 username dropped 1 raw beef absX: 3032 absY: 3300
+[2018/10/11] 17:18 username dropped 1 cowhide absX: 3033 absY: 3301
+[2018/10/11] 17:18 username dropped 1 raw beef absX: 3033 absY: 3301
+[2018/10/11] 17:19 username dropped 1 cowhide absX: 3037 absY: 3304
+[2018/10/11] 17:19 username dropped 1 raw beef absX: 3037 absY: 3304
+[2018/10/11] 17:19 username dropped 1 cowhide absX: 3036 absY: 3301
+[2018/10/11] 17:19 username dropped 1 raw beef absX: 3036 absY: 3301
+[2018/10/11] 17:19 username dropped 1 cowhide absX: 3031 absY: 3301
+[2018/10/11] 17:19 username dropped 1 raw beef absX: 3031 absY: 3301
+[2018/10/11] 17:20 username dropped 1 cowhide absX: 3027 absY: 3300
+[2018/10/11] 17:20 username dropped 1 raw beef absX: 3027 absY: 3300
+[2018/10/11] 17:20 username dropped 1 cowhide absX: 3029 absY: 3300
+[2018/10/11] 17:20 username dropped 1 raw beef absX: 3029 absY: 3300
+[2018/10/11] 17:20 username dropped 1 cowhide absX: 3027 absY: 3299
+[2018/10/11] 17:20 username dropped 1 raw beef absX: 3027 absY: 3299
+[2018/10/11] 17:21 username dropped 1 cowhide absX: 3029 absY: 3300
+[2018/10/11] 17:21 username dropped 1 raw beef absX: 3029 absY: 3300
+[2018/10/11] 17:21 username dropped 1 cowhide absX: 3027 absY: 3298
+[2018/10/11] 17:21 username dropped 1 raw beef absX: 3027 absY: 3298
+[2018/10/11] 17:21 username dropped 1 cowhide absX: 3034 absY: 3301
+[2018/10/11] 17:21 username dropped 1 raw beef absX: 3034 absY: 3301
+[2018/10/11] 17:21 username dropped 1 raw beef absX: 3034 absY: 3300
+[2018/10/11] 17:22 username dropped 1 cowhide absX: 3030 absY: 3299
+[2018/10/11] 17:22 username dropped 1 raw beef absX: 3030 absY: 3299
+[2018/10/11] 17:22 username dropped 1 cowhide absX: 3028 absY: 3299
+[2018/10/11] 17:22 username dropped 1 raw beef absX: 3028 absY: 3299
+[2018/10/11] 17:22 username dropped 1 cowhide absX: 3029 absY: 3302
+[2018/10/11] 17:22 username dropped 1 raw beef absX: 3029 absY: 3302
+[2018/10/11] 17:22 username dropped 1 cowhide absX: 3030 absY: 3301
+[2018/10/11] 17:22 username dropped 1 raw beef absX: 3030 absY: 3301
+[2018/10/11] 17:23 username dropped 1 cowhide absX: 3026 absY: 3300
+[2018/10/11] 17:23 username dropped 1 raw beef absX: 3026 absY: 3300
+[2018/10/11] 17:23 username dropped 1 cowhide absX: 3031 absY: 3301
+[2018/10/11] 17:23 username dropped 1 raw beef absX: 3031 absY: 3301
+[2018/10/11] 17:23 username dropped 1 cowhide absX: 3034 absY: 3299
+[2018/10/11] 17:23 username dropped 1 raw beef absX: 3034 absY: 3299
+[2018/10/11] 17:23 username dropped 1 cowhide absX: 3036 absY: 3302
+[2018/10/11] 17:23 username dropped 1 raw beef absX: 3036 absY: 3302
+[2018/10/11] 17:23 username dropped 1 cowhide absX: 3034 absY: 3303
+[2018/10/11] 17:23 username dropped 1 raw beef absX: 3034 absY: 3303
+[2018/10/11] 17:24 username dropped 1 cowhide absX: 3028 absY: 3303
+[2018/10/11] 17:24 username dropped 1 raw beef absX: 3028 absY: 3303
+[2018/10/11] 17:24 username dropped 1 cowhide absX: 3029 absY: 3300
+[2018/10/11] 17:24 username dropped 1 raw beef absX: 3029 absY: 3300
+[2018/10/11] 17:24 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 17:24 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 17:24 username dropped 1 cowhide absX: 3031 absY: 3301
+[2018/10/11] 17:24 username dropped 1 raw beef absX: 3031 absY: 3301
+[2018/10/11] 17:25 username dropped 1 cowhide absX: 3027 absY: 3299
+[2018/10/11] 17:25 username dropped 1 raw beef absX: 3027 absY: 3299
+[2018/10/11] 17:25 username dropped 1 cowhide absX: 3028 absY: 3300
+[2018/10/11] 17:25 username dropped 1 raw beef absX: 3028 absY: 3300
+[2018/10/11] 17:25 username dropped 1 cowhide absX: 3032 absY: 3301
+[2018/10/11] 17:25 username dropped 1 raw beef absX: 3032 absY: 3301
+[2018/10/11] 17:25 username dropped 1 cowhide absX: 3032 absY: 3301
+[2018/10/11] 17:25 username dropped 1 raw beef absX: 3032 absY: 3301
+[2018/10/11] 17:26 username dropped 1 cowhide absX: 3033 absY: 3301
+[2018/10/11] 17:26 username dropped 1 raw beef absX: 3033 absY: 3301
+[2018/10/11] 17:26 username dropped 1 cowhide absX: 3029 absY: 3299
+[2018/10/11] 17:26 username dropped 1 raw beef absX: 3029 absY: 3299
+[2018/10/11] 17:26 username dropped 1 cowhide absX: 3029 absY: 3299
+[2018/10/11] 17:26 username dropped 1 raw beef absX: 3029 absY: 3299
+[2018/10/11] 17:26 username dropped 1 cowhide absX: 3026 absY: 3298
+[2018/10/11] 17:26 username dropped 1 raw beef absX: 3026 absY: 3298
+[2018/10/11] 17:27 username dropped 1 cowhide absX: 3031 absY: 3301
+[2018/10/11] 17:27 username dropped 1 raw beef absX: 3031 absY: 3301
+[2018/10/11] 17:27 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 17:27 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 17:28 username dropped 1 cowhide absX: 3030 absY: 3300
+[2018/10/11] 17:28 username dropped 1 raw beef absX: 3030 absY: 3300
+[2018/10/11] 17:28 username dropped 1 cowhide absX: 3035 absY: 3300
+[2018/10/11] 17:28 username dropped 1 raw beef absX: 3035 absY: 3300

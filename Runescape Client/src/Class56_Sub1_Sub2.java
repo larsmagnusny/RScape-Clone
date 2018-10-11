@@ -33,7 +33,7 @@ final class Class56_Sub1_Sub2 extends Class56_Sub1 implements Runnable
     	method845(i, (int) l, i_4_, i_5_);
     }
     
-    final synchronized void method827(int i, byte[] is, int i_6_,
+    final synchronized void playMidiSequence(int i, byte[] is, int i_6_,
 				      boolean bool) {
 		aClass11_1857.method525(is);
 		boolean bool_7_ = true;
@@ -113,7 +113,7 @@ final class Class56_Sub1_Sub2 extends Class56_Sub1 implements Runnable
 	}
     }
     
-    final synchronized void method833() {
+    final synchronized void stopMusic() {
 		aRunnable_Impl1_1852.method12(false);
 		method838((long) anInt1855);
 		aRunnable_Impl1_1852.method10(anIntArray1858, anInt1856);
@@ -121,7 +121,7 @@ final class Class56_Sub1_Sub2 extends Class56_Sub1 implements Runnable
 		aClass11_1857.method523();
     }
     
-    final void method828() {
+    final void closeSequencerAndReciever() {
     	synchronized (this) {
     		aBoolean1853 = true;
     	}

@@ -97,7 +97,7 @@ final class RSSocket implements Runnable {
 
 			if (!isWriter) {
 				isWriter = true;
-				rsApplet.startRunnable(this, 3);
+				rsApplet.startRunnableThread(this, 3);
 			}
 			notify();
 		}

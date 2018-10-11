@@ -80,3 +80,50 @@
 [2018/10/11] 12:23 username picked up bones itemX: 3246, itemY: 3234
 [2018/10/11] 12:23 username picked up bones itemX: 3246, itemY: 3234
 [2018/10/11] 12:24 username picked up bones itemX: 3213, itemY: 3210
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:43 username picked up swamp tar itemX: 3194, itemY: 3167
+[2018/10/11] 16:45 username picked up unicorn horn itemX: 3134, itemY: 3217
+[2018/10/11] 16:45 username picked up bones itemX: 3134, itemY: 3217
+[2018/10/11] 16:46 username picked up bones itemX: 3137, itemY: 3228
+[2018/10/11] 16:46 username picked up bones itemX: 3148, itemY: 3232
+[2018/10/11] 16:47 username picked up bones itemX: 3147, itemY: 3245
+[2018/10/11] 16:47 username picked up air rune itemX: 3147, itemY: 3245
+[2018/10/11] 16:47 username picked up bones itemX: 3147, itemY: 3245
+[2018/10/11] 16:48 username picked up bones itemX: 3144, itemY: 3252
+[2018/10/11] 16:48 username picked up bones itemX: 3145, itemY: 3254
+[2018/10/11] 16:49 username picked up bones itemX: 3140, itemY: 3254
+[2018/10/11] 16:49 username picked up bones itemX: 3143, itemY: 3254
+[2018/10/11] 16:49 username picked up bones itemX: 3137, itemY: 3260
+[2018/10/11] 16:56 username picked up raw beef itemX: 3034, itemY: 3300
+[2018/10/11] 16:56 username picked up raw beef itemX: 3029, itemY: 3299
+[2018/10/11] 16:57 username picked up raw beef itemX: 3026, itemY: 3300
+[2018/10/11] 16:58 username picked up raw beef itemX: 3028, itemY: 3299
+[2018/10/11] 16:59 username picked up raw beef itemX: 3029, itemY: 3299
+[2018/10/11] 16:59 username picked up bones itemX: 3025, itemY: 3300
+[2018/10/11] 16:59 username picked up cowhide itemX: 3025, itemY: 3300
+[2018/10/11] 16:59 username picked up raw beef itemX: 3025, itemY: 3300
+[2018/10/11] 17:00 username picked up raw beef itemX: 3030, itemY: 3300
+[2018/10/11] 17:00 username picked up raw beef itemX: 3031, itemY: 3301
+[2018/10/11] 17:01 username picked up raw beef itemX: 3034, itemY: 3301
+[2018/10/11] 17:01 username picked up raw beef itemX: 3031, itemY: 3300
+[2018/10/11] 17:01 username picked up raw beef itemX: 3036, itemY: 3301
+[2018/10/11] 17:02 username picked up raw beef itemX: 3030, itemY: 3300
+[2018/10/11] 17:07 username picked up raw beef itemX: 3034, itemY: 3301
+[2018/10/11] 17:08 username picked up raw beef itemX: 3031, itemY: 3299
+[2018/10/11] 17:10 username picked up raw beef itemX: 3029, itemY: 3300
+[2018/10/11] 17:11 username picked up raw beef itemX: 3030, itemY: 3301
+[2018/10/11] 17:11 username picked up raw beef itemX: 3034, itemY: 3299
+[2018/10/11] 17:11 username picked up raw beef itemX: 3031, itemY: 3299
+[2018/10/11] 17:11 username picked up raw beef itemX: 3027, itemY: 3299
+[2018/10/11] 17:12 username picked up raw beef itemX: 3030, itemY: 3300
+[2018/10/11] 17:12 username picked up raw beef itemX: 3034, itemY: 3299
+[2018/10/11] 17:13 username picked up raw beef itemX: 3030, itemY: 3299
+[2018/10/11] 17:13 username picked up raw beef itemX: 3025, itemY: 3299
+[2018/10/11] 17:14 username picked up raw beef itemX: 3027, itemY: 3300
+[2018/10/11] 17:15 username picked up raw beef itemX: 3030, itemY: 3299
+[2018/10/11] 17:17 username picked up raw beef itemX: 3036, itemY: 3300
+[2018/10/11] 17:21 username picked up raw beef itemX: 3034, itemY: 3300

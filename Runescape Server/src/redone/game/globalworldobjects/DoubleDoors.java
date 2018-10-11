@@ -352,6 +352,7 @@ public class DoubleDoors {
 	};
 	
 	public void load() {
+		doors.clear();
 		long start = System.currentTimeMillis();
 		
 		MySQLDatabase database = MySQLDatabase.getInstance();

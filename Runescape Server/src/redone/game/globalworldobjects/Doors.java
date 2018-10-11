@@ -204,6 +204,7 @@ public class Doors {
 	}
 	
 	public void load() {
+		doors.clear();
 		long start = System.currentTimeMillis();
 		MySQLDatabase database = MySQLDatabase.getInstance();
 		ResultSet rs = database.runQuery("SELECT * FROM `doors`;");

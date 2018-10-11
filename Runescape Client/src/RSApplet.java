@@ -27,7 +27,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		gameFrame = new RSFrame(this, myWidth, myHeight);
 		graphics = getGameComponent().getGraphics();
 		fullGameScreen = new RSImageProducer(myWidth, myHeight, getGameComponent());
-		startRunnable(this, 1);
+		startRunnableThread(this, 1);
 	}
 
 	final void initClientFrame(int i, int j) {
@@ -35,7 +35,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		myHeight = i;
 		graphics = getGameComponent().getGraphics();
 		fullGameScreen = new RSImageProducer(myWidth, myHeight, getGameComponent());
-		startRunnable(this, 1);
+		startRunnableThread(this, 1);
 	}
 
 	@Override
@@ -456,7 +456,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 		}
 	}
 
-	public void startRunnable(Runnable runnable, int priority) {
+	public void startRunnableThread(Runnable runnable, int priority) {
 		Thread thread = new Thread(runnable);
 		thread.start();
 		thread.setPriority(priority);
