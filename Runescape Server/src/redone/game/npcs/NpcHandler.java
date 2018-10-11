@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import redone.Constants;
 import redone.Server;
@@ -16,6 +18,7 @@ import redone.game.content.music.sound.CombatSounds;
 import redone.game.content.randomevents.FreakyForester;
 import redone.game.content.randomevents.RandomEventHandler;
 import redone.game.content.randomevents.RiverTroll;
+import redone.game.database.MySQLDatabase;
 import redone.game.npcs.drops.NPCDropsHandler;
 import redone.game.players.Client;
 import redone.game.players.Player;
@@ -39,8 +42,8 @@ public class NpcHandler {
 		for (int i = 0; i < maxListedNPCs; i++) {
 			NpcList[i] = null;
 		}
-		loadNPCList("./Data/CFG/npc.cfg");
-		loadAutoSpawn("./Data/CFG/spawn-config.cfg");
+		loadNPCList();
+		loadAutoSpawn();
 	}
 	
 	public static boolean isUndead(int index) {
@@ -1236,72 +1239,30 @@ public class NpcHandler {
 		return 0;
 	}
 
-	public boolean loadAutoSpawn(String FileName) {
-		String line = "";
-		String token = "";
-		String token2 = "";
-		String token2_2 = "";
-		String[] token3 = new String[10];
-		boolean EndOfFile = false;
-		// int ReadMode = 0;
-		BufferedReader characterfile = null;
+	public boolean loadAutoSpawn() {
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `spawn_config`");
+		
 		try {
-			characterfile = new BufferedReader(new FileReader("./" + FileName));
-		} catch (FileNotFoundException fileex) {
-			Misc.println(FileName + ": file not found.");
-			return false;
-		}
-		try {
-			line = characterfile.readLine();
-		} catch (IOException ioexception) {
-			Misc.println(FileName + ": error loading file.");
-			// return false;
-		}
-		while (EndOfFile == false && line != null) {
-			line = line.trim();
-			int spot = line.indexOf("=");
-			if (spot > -1) {
-				token = line.substring(0, spot);
-				token = token.trim();
-				token2 = line.substring(spot + 1);
-				token2 = token2.trim();
-				token2_2 = token2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token3 = token2_2.split("\t");
-				if (token.equals("spawn")) {
-					newNPC(Integer.parseInt(token3[0]),// npc
-							Integer.parseInt(token3[1]),// x
-							Integer.parseInt(token3[2]),// y
-							Integer.parseInt(token3[3]),// height
-							Integer.parseInt(token3[4]),// walk
-							getNpcListHP(Integer.parseInt(token3[0])),// health
-							Integer.parseInt(token3[5]),// maxhit
-							Integer.parseInt(token3[6]),// attack
-							Integer.parseInt(token3[7]));// str
-
-				}
-			} else {
-				if (line.equals("[ENDOFSPAWNLIST]")) {
-					try {
-						characterfile.close();
-					} catch (IOException ioexception) {
-					}
-					//return true;
-				}
+			while(rs.next())
+			{
+				newNPC(rs.getInt(1),// npc
+					   rs.getInt(2),// x
+					   rs.getInt(3),// y
+					   rs.getInt(4),// height
+					   rs.getInt(5),// walk
+					   getNpcListHP(rs.getInt(1)),// health
+					   rs.getInt(6),// maxhit
+					   rs.getInt(7),// attack
+					   rs.getInt(8));// defence
 			}
-			try {
-				line = characterfile.readLine();
-			} catch (IOException ioexception1) {
-				EndOfFile = true;
-			}
+			
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		try {
-			characterfile.close();
-		} catch (IOException ioexception) {
-		}
+		
 		return false;
 	}
 
@@ -1327,65 +1288,23 @@ public class NpcHandler {
 		return "nothing";
 	}
 
-	public boolean loadNPCList(String FileName) {
-		String line = "";
-		String token = "";
-		String token2 = "";
-		String token2_2 = "";
-		String[] token3 = new String[10];
-		boolean EndOfFile = false;
-		BufferedReader characterfile = null;
+	public boolean loadNPCList()
+	{
+		MySQLDatabase database = MySQLDatabase.getInstance();
+		ResultSet rs = database.runQuery("SELECT * FROM `npc_cfg`");
+
 		try {
-			characterfile = new BufferedReader(new FileReader("./" + FileName));
-		} catch (FileNotFoundException fileex) {
-			Misc.println(FileName + ": file not found.");
-			return false;
-		}
-		try {
-			line = characterfile.readLine();
-			// characterfile.close();
-		} catch (IOException ioexception) {
-			Misc.println(FileName + ": error loading file.");
-			// return false;
-		}
-		while (EndOfFile == false && line != null) {
-			line = line.trim();
-			int spot = line.indexOf("=");
-			if (spot > -1) {
-				token = line.substring(0, spot);
-				token = token.trim();
-				token2 = line.substring(spot + 1);
-				token2 = token2.trim();
-				token2_2 = token2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token2_2 = token2_2.replaceAll("\t\t", "\t");
-				token3 = token2_2.split("\t");
-				if (token.equals("npc")) {
-					newNPCList(Integer.parseInt(token3[0]), token3[1],
-							Integer.parseInt(token3[2]),
-							Integer.parseInt(token3[3]));
-				}
-			} else {
-				if (line.equals("[ENDOFNPCLIST]")) {
-					try {
-						characterfile.close();
-					} catch (IOException ioexception) {
-					}
-					//return true;
-				}
+			while(rs.next())
+			{
+				newNPCList(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
 			}
-			try {
-				line = characterfile.readLine();
-			} catch (IOException ioexception1) {
-				EndOfFile = true;
-			}
+			
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		try {
-			characterfile.close();
-		} catch (IOException ioexception) {
-		}
+		
 		return false;
 	}
 

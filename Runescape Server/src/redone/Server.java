@@ -14,6 +14,7 @@ import redone.game.content.minigames.FightPits;
 import redone.game.content.minigames.PestControl;
 import redone.game.content.minigames.castlewars.CastleWars;
 import redone.game.content.minigames.trawler.Trawler;
+import redone.game.database.MySQLDatabase;
 import redone.game.globalworldobjects.Doors;
 import redone.game.globalworldobjects.DoubleDoors;
 import redone.game.items.ItemDefinitions;
@@ -43,9 +44,8 @@ import redone.world.clip.Region;
  * @author Ryan Lmctruck30
  * @author Integration Julian.
  */
-public class Server {
-
-
+public class Server
+{
 	public static int[] cannonsX = new int [50];
 	public static int[] cannonsY = new int [50];
 	public static String[] cannonsO = new String [50];
@@ -72,22 +72,26 @@ public class Server {
 	private static final TaskScheduler scheduler = new TaskScheduler();
 	public static ClanChatHandler clanChat = new ClanChatHandler();
 	
-	public static TaskScheduler getTaskScheduler() {
+	public static TaskScheduler getTaskScheduler()
+	{
 		return scheduler;
 	}
 
 	/**
 	 * Port and Cycle rate.
 	 */
-	static {
+	static
+	{
 		serverlistenerPort = 43594;
 		cycleRate = 600;
 		shutdownServer = false;
 	}
 
 	public static void main(java.lang.String args[])
-			throws NullPointerException, IOException {
-		if (Constants.SERVER_DEBUG) {
+			throws NullPointerException, IOException
+	{
+		if (Constants.SERVER_DEBUG)
+		{
 			System.out.println("@@@@ DEBUG MODE IS ENABLED @@@@");
 		}
 

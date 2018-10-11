@@ -1,0 +1,33 @@
+[2018/10/11] 12:00 username dropped 1 bronze med helm absX: 3260 absY: 3228
+[2018/10/11] 12:02 username dropped 1 bronze chainbody absX: 3250 absY: 3232
+[2018/10/11] 12:03 username dropped 1 goblin mail absX: 3247 absY: 3233
+[2018/10/11] 12:04 username dropped 5 bronze arrow absX: 3251 absY: 3234
+[2018/10/11] 12:04 username dropped 1 bronze sq shield absX: 3251 absY: 3234
+[2018/10/11] 12:04 username dropped 4 air rune absX: 3251 absY: 3234
+[2018/10/11] 12:04 username dropped 4 earth rune absX: 3251 absY: 3234
+[2018/10/11] 12:07 username dropped 1 tin ore absX: 3251 absY: 3235
+[2018/10/11] 12:07 username dropped 1 bronze full helm absX: 3246 absY: 3233
+[2018/10/11] 12:08 username dropped 1 bronze full helm absX: 3246 absY: 3233
+[2018/10/11] 12:09 username dropped 1 iron dagger absX: 3246 absY: 3238
+[2018/10/11] 12:09 username dropped 4 air rune absX: 3246 absY: 3238
+[2018/10/11] 12:11 username dropped 5 bronze arrow absX: 3245 absY: 3235
+[2018/10/11] 12:12 username dropped 5 bronze arrow absX: 3246 absY: 3235
+[2018/10/11] 12:13 username dropped 4 air rune absX: 3245 absY: 3235
+[2018/10/11] 12:15 username dropped 6 water rune absX: 3246 absY: 3237
+[2018/10/11] 12:15 username dropped 1 goblin mail absX: 3246 absY: 3237
+[2018/10/11] 12:15 username dropped 1 bronze full helm absX: 3246 absY: 3237
+[2018/10/11] 12:17 username dropped 26 steel arrow absX: 3249 absY: 3233
+[2018/10/11] 12:18 username dropped 1 air talisman absX: 3246 absY: 3234
+[2018/10/11] 12:19 username dropped 7 body rune absX: 3245 absY: 3234
+[2018/10/11] 12:19 username dropped 22 coins absX: 3245 absY: 3236
+[2018/10/11] 12:19 username dropped 1 iron dagger absX: 3245 absY: 3236
+[2018/10/11] 12:19 username dropped 1 air talisman absX: 3245 absY: 3236
+[2018/10/11] 12:19 username dropped 1 chef's hat absX: 3245 absY: 3236
+[2018/10/11] 12:19 username dropped 1 bronze longsword absX: 3245 absY: 3236
+[2018/10/11] 12:20 username dropped 1 goblin mail absX: 3246 absY: 3236
+[2018/10/11] 12:20 username dropped 1 goblin mail absX: 3246 absY: 3236
+[2018/10/11] 12:21 username dropped 1 bronze med helm absX: 3247 absY: 3236
+[2018/10/11] 12:22 username dropped 4 earth rune absX: 3247 absY: 3233
+[2018/10/11] 12:22 username dropped 1 tin ore absX: 3246 absY: 3236
+[2018/10/11] 12:22 username dropped 7 body rune absX: 3246 absY: 3236
+[2018/10/11] 12:22 username dropped 1 bronze kiteshield absX: 3246 absY: 3236
