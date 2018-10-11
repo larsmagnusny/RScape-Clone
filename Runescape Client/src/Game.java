@@ -6948,7 +6948,7 @@ public class Game extends RSApplet
 			NPC npc = npcArray[k];
 			int l = stream.readUnsignedByte();
 			if ((l & 0x10) != 0) {
-				int i1 = stream.method434();
+				int i1 = stream.readInterfaceID();
 				if (i1 == 65535) {
 					i1 = -1;
 				}
@@ -7024,8 +7024,8 @@ public class Game extends RSApplet
 				npc.anInt1511 = npc.desc.anInt77;
 			}
 			if ((l & 4) != 0) {
-				npc.anInt1538 = stream.method434();
-				npc.anInt1539 = stream.method434();
+				npc.anInt1538 = stream.readInterfaceID();
+				npc.anInt1539 = stream.readInterfaceID();
 			}
 		}
 	}
@@ -8914,7 +8914,7 @@ public class Game extends RSApplet
 			player.method446();
 		}
 		if ((i & 0x100) != 0) {
-			player.anInt1520 = stream.method434();
+			player.anInt1520 = stream.readInterfaceID();
 			int k = stream.readDWord();
 			player.anInt1524 = k >> 16;
 			player.anInt1523 = loopCycle + (k & 0xffff);
@@ -8929,7 +8929,7 @@ public class Game extends RSApplet
 			//processSound(player.anInt1520, 0, player, null);
 		}
 		if ((i & 8) != 0) {
-			int l = stream.method434();
+			int l = stream.readInterfaceID();
 			if (l == 65535) {
 				l = -1;
 			}
@@ -8968,7 +8968,7 @@ public class Game extends RSApplet
 			player.textCycle = 150;
 		}
 		if ((i & 0x80) != 0) {
-			int i1 = stream.method434();
+			int i1 = stream.readInterfaceID();
 			int j2 = stream.readUnsignedByte();
 			int j3 = stream.method427();
 			int k3 = stream.currentOffset;
@@ -9015,7 +9015,7 @@ public class Game extends RSApplet
 			stream.currentOffset = k3 + j3;
 		}
 		if ((i & 1) != 0) {
-			player.interactingEntity = stream.method434();
+			player.interactingEntity = stream.readInterfaceID();
 			if (player.interactingEntity == 65535) {
 				player.interactingEntity = -1;
 			}
@@ -9030,7 +9030,7 @@ public class Game extends RSApplet
 		}
 		if ((i & 2) != 0) {
 			player.anInt1538 = stream.method436();
-			player.anInt1539 = stream.method434();
+			player.anInt1539 = stream.readInterfaceID();
 		}
 		if ((i & 0x20) != 0) {
 			int k1 = stream.readUnsignedByte();
@@ -10469,7 +10469,7 @@ public class Game extends RSApplet
 			int j7 = anInt1269 + (l1 & 7);
 			int i10 = stream.readUnsignedWord();
 			byte byte0 = stream.method430();
-			int l14 = stream.method434();
+			int l14 = stream.readInterfaceID();
 			byte byte1 = stream.method429();
 			int k17 = stream.readUnsignedWord();
 			int k18 = stream.method428();
@@ -10539,7 +10539,7 @@ public class Game extends RSApplet
 			int i2 = stream.method426();
 			int l4 = anInt1268 + (i2 >> 4 & 7);
 			int k7 = anInt1269 + (i2 & 7);
-			int j10 = stream.method434();
+			int j10 = stream.readInterfaceID();
 			int k12 = stream.method428();
 			int i15 = k12 >> 2;
 			int k16 = k12 & 3;
@@ -10911,16 +10911,21 @@ public class Game extends RSApplet
 		xCameraCurve = j1;
 	}
 
-	public boolean parsePacket() {
-		if (socketStream == null) {
+	public boolean parsePacket() 
+	{
+		if (socketStream == null)
+		{
 			return false;
 		}
-		try {
+		try 
+		{
 			int i = socketStream.available();
-			if (i == 0) {
+			if (i == 0)
+			{
 				return false;
 			}
-			if (pktType == -1) {
+			if (pktType == -1)	// Invalid packet
+			{
 				socketStream.flushInputStream(inStream.buffer, 1);
 				pktType = inStream.buffer[0] & 0xff;
 				if (encryption != null) {
@@ -10929,7 +10934,8 @@ public class Game extends RSApplet
 				pktSize = SizeConstants.packetSizes[pktType];
 				i--;
 			}
-			if (pktSize == -1) {
+			if (pktSize == -1) // Invalid packet
+			{
 				if (i > 0) {
 					socketStream.flushInputStream(inStream.buffer, 1);
 					pktSize = inStream.buffer[0] & 0xff;
@@ -10938,7 +10944,8 @@ public class Game extends RSApplet
 					return false;
 				}
 			}
-			if (pktSize == -2) {
+			if (pktSize == -2) // Invalid packet
+			{
 				if (i > 1) {
 					socketStream.flushInputStream(inStream.buffer, 2);
 					inStream.currentOffset = 0;
@@ -10957,29 +10964,35 @@ public class Game extends RSApplet
 			anInt843 = anInt842;
 			anInt842 = anInt841;
 			anInt841 = pktType;
-			if (pktType == 81) {
+			if (pktType == 81) 
+			{
 				updatePlayers(pktSize, inStream);
 				aBoolean1080 = false;
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 176) {
+			if (pktType == 176) // Unkown Packet
+			{
 				daysSinceRecovChange = inStream.method427();
 				unreadMessages = inStream.method435();
 				membersInt = inStream.readUnsignedByte();
-				anInt1193 = inStream.method440();
+				mIPAddr = inStream.method440();
 				daysSinceLastLogin = inStream.readUnsignedWord();
-				if (anInt1193 != 0 && openInterfaceID == -1) {
-					Signlink.dnslookup(TextClass.method586(anInt1193));
+				if (mIPAddr != 0 && openInterfaceID == -1) 
+				{
+					Signlink.dnslookup(TextClass.method586(mIPAddr));
 					closeOpenInterfaces();
 					char c = '\u028A';
-					if (daysSinceRecovChange != 201 || membersInt == 1) {
+					if (daysSinceRecovChange != 201 || membersInt == 1) 
+					{
 						c = '\u028F';
 					}
 					reportAbuseInput = "";
 					canMute = false;
-					for (RSInterface element : RSInterface.interfaceCache) {
-						if (element == null || element.actionID != c) {
+					for (RSInterface element : RSInterface.interfaceCache) 
+					{
+						if (element == null || element.actionID != c) 
+						{
 							continue;
 						}
 						openInterfaceID = element.parentID;
@@ -10990,7 +11003,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 64) {
+			if (pktType == 64) // Unkown Packet
+			{
 				anInt1268 = inStream.method427();
 				anInt1269 = inStream.method428();
 				for (int j = anInt1268; j < anInt1268 + 8; j++) {
@@ -11012,18 +11026,23 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 185) {
+			if (pktType == 185) // Unkown Packet
+			{
 				int k = inStream.method436();
 				RSInterface.interfaceCache[k].anInt233 = 3;
-				if (myPlayer.desc == null) {
+				if (myPlayer.desc == null)
+				{
 					RSInterface.interfaceCache[k].mediaID = (myPlayer.anIntArray1700[0] << 25) + (myPlayer.anIntArray1700[4] << 20) + (myPlayer.equipment[0] << 15) + (myPlayer.equipment[8] << 10) + (myPlayer.equipment[11] << 5) + myPlayer.equipment[1];
-				} else {
+				}
+				else
+				{
 					RSInterface.interfaceCache[k].mediaID = (int) (0x12345678L + myPlayer.desc.type);
 				}
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 107) {
+			if (pktType == 107) // Unkown Packet
+			{
 				aBoolean1160 = false;
 				for (int l = 0; l < 5; l++) {
 					aBooleanArray876[l] = false;
@@ -11032,8 +11051,9 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 72) {
-				int i1 = inStream.method434();
+			if (pktType == 72) // Unkown Packet
+			{
+				int i1 = inStream.readInterfaceID();
 				RSInterface class9 = RSInterface.interfaceCache[i1];
 				for (int k15 = 0; k15 < class9.inv.length; k15++) {
 					class9.inv[k15] = -1;
@@ -11043,7 +11063,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 214) {
+			if (pktType == 214) // Unkown Packet
+			{
 				ignoreCount = pktSize / 8;
 				for (int j1 = 0; j1 < ignoreCount; j1++) {
 					ignoreListAsLongs[j1] = inStream.readQWord();
@@ -11052,7 +11073,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 166) {
+			if (pktType == 166) // Unkown Packet
+			{
 				aBoolean1160 = true;
 				anInt1098 = inStream.readUnsignedByte();
 				anInt1099 = inStream.readUnsignedByte();
@@ -11067,7 +11089,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 134) {
+			if (pktType == 134) // Unkown Packet
+			{
 				mNeedDrawTabArea = true;
 				int k1 = inStream.readUnsignedByte();
 				int i10 = inStream.method439();
@@ -11084,7 +11107,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 71) {
+			if (pktType == 71) // Unkown Packet
+			{
 				int l1 = inStream.readUnsignedWord();
 				int j10 = inStream.readUnsignedByteA();
 				if (l1 == 65535) {
@@ -11096,8 +11120,9 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 74) {
-				int i2 = inStream.method434();
+			if (pktType == 74) // Unkown Packet
+			{
+				int i2 = inStream.readInterfaceID();
 				if (i2 == 65535) {
 					i2 = -1;
 				}
@@ -11110,7 +11135,8 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 121) {
+			if (pktType == 121) // Change Regions
+			{
 				int i_60_ = inStream.method436();
 				int i_61_ = inStream.method435();
 				if (i_61_ == 65535)
@@ -11122,18 +11148,20 @@ public class Game extends RSApplet
 				pktType = -1;
 				return true;
 			}
-			if (pktType == 109) {
+			if (pktType == 109) // Unknown Packet
+			{
 				resetLogout();
 				pktType = -1;
 				return false;
 			}
-			if (pktType == 70) {
+			if (pktType == 70) // Clickable Object, Third Click
+			{
 				int k2 = inStream.readSignedWord();
 				int l10 = inStream.method437();
-				int i16 = inStream.method434();
-				RSInterface class9_5 = RSInterface.interfaceCache[i16];
-				class9_5.anInt263 = k2;
-				class9_5.anInt265 = l10;
+				int interfaceID = inStream.readInterfaceID();
+				RSInterface interfaceMenu = RSInterface.interfaceCache[interfaceID];
+				interfaceMenu.anInt263 = k2;
+				interfaceMenu.anInt265 = l10;
 				pktType = -1;
 				return true;
 			}
@@ -11373,7 +11401,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 114) {
-				anInt1104 = inStream.method434() * 30;
+				anInt1104 = inStream.readInterfaceID() * 30;
 				pktType = -1;
 				return true;
 			}
@@ -11656,7 +11684,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 79) {
-				int j5 = inStream.method434();
+				int j5 = inStream.readInterfaceID();
 				int l12 = inStream.method435();
 				RSInterface class9_3 = RSInterface.interfaceCache[j5];
 				if (class9_3 != null && class9_3.type == 0) {
@@ -11735,7 +11763,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 246) {
-				int i6 = inStream.method434();
+				int i6 = inStream.readInterfaceID();
 				int i13 = inStream.readUnsignedWord();
 				int k18 = inStream.readUnsignedWord();
 				if (k18 == 65535) {
@@ -11761,7 +11789,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 142) {
-				int j6 = inStream.method434();
+				int j6 = inStream.readInterfaceID();
 				method60(j6);
 				if (backDialogID != -1) {
 					backDialogID = -1;
@@ -12030,7 +12058,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 87) {
-				int j8 = inStream.method434();
+				int j8 = inStream.readInterfaceID();
 				int l14 = inStream.method439();
 				anIntArray1045[j8] = l14;
 				if (variousSettings[j8] != l14) {
@@ -12045,7 +12073,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 36) {
-				int k8 = inStream.method434();
+				int k8 = inStream.readInterfaceID();
 				byte byte0 = inStream.readSignedByte();
 				anIntArray1045[k8] = byte0;
 				if (variousSettings[k8] != byte0) {
@@ -12136,7 +12164,7 @@ public class Game extends RSApplet
 				return true;
 			}
 			if (pktType == 164) {
-				int j9 = inStream.method434();
+				int j9 = inStream.readInterfaceID();
 				method60(j9);
 				if (invOverlayInterfaceID != -1) {
 					invOverlayInterfaceID = -1;
@@ -12167,11 +12195,17 @@ public class Game extends RSApplet
 			}
 			Signlink.reporterror(s2);
 			resetLogout();
-		} catch (IOException _ex) {
+		}
+		catch (IOException _ex) 
+		{
 			dropClient();
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) 
+		{
 			String s2 = "T2 - " + pktType + "," + anInt842 + "," + anInt843 + " - " + pktSize + "," + (baseX + myPlayer.smallX[0]) + "," + (baseY + myPlayer.smallY[0]) + " - ";
-			for (int j15 = 0; j15 < pktSize && j15 < 50; j15++) {
+			
+			for (int j15 = 0; j15 < pktSize && j15 < 50; j15++) 
+			{
 				s2 = s2 + inStream.buffer[j15] + ",";
 			}
 
@@ -12779,7 +12813,7 @@ public class Game extends RSApplet
 	public int[] mBuffer5;
 	public int[] mBuffer6;
 	public Stream mStream;
-	public int anInt1193;
+	public int mIPAddr;
 	public int splitpublicChat;
 	public Background invBack;
 	public Background mapBack;

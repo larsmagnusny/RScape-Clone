@@ -267,7 +267,7 @@ public final class Stream extends NodeSub {
 		buffer[currentOffset++] = (byte) (j >> 8);
 	}
 
-	public int method434() {
+	public int readInterfaceID() {
 		currentOffset += 2;
 		return ((buffer[currentOffset - 1] & 0xff) << 8) + (buffer[currentOffset - 2] & 0xff);
 	}
