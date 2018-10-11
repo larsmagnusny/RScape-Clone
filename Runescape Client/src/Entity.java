@@ -166,7 +166,7 @@ public class Entity extends Animable {
 	public int currentHealth;
 	public int maxHealth;
 	int textCycle;
-	int anInt1537;
+	int loopCycle;
 	int anInt1538;
 	int anInt1539;
 	int anInt1540;

@@ -144,7 +144,7 @@ public final class Sprite extends DrawingArea {
 		anInt1443 = 0;
 	}
 
-	public void method346(int i, int j) {
+	public void setPosition(int i, int j) {
 		i += anInt1442;
 		j += anInt1443;
 		int l = i + j * DrawingArea.width;

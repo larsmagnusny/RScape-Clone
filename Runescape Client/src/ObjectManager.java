@@ -146,7 +146,7 @@ final class ObjectManager {
 							k15 -= anIntArray127[k18];
 							k16 -= anIntArray128[k18];
 						}
-						if (k17 >= 1 && k17 < anInt147 - 1 && (!lowMem || (aByteArrayArrayArray149[0][l6][k17] & 2) != 0 || (aByteArrayArrayArray149[l][l6][k17] & 0x10) == 0 && method182(k17, l, l6) == anInt131)) {
+						if (k17 >= 1 && k17 < anInt147 - 1 && (!lowMem || (aByteArrayArrayArray149[0][l6][k17] & 2) != 0 || (aByteArrayArrayArray149[l][l6][k17] & 0x10) == 0 && method182(k17, l, l6) == plane)) {
 							if (l < anInt145) {
 								anInt145 = l;
 							}
@@ -460,7 +460,7 @@ final class ObjectManager {
 			if ((aByteArrayArrayArray149[k][l][i] & 0x10) != 0) {
 				return;
 			}
-			if (method182(i, k, l) != anInt131) {
+			if (method182(i, k, l) != plane) {
 				return;
 			}
 		}
@@ -828,7 +828,7 @@ final class ObjectManager {
 		for (int i2 = 0; i2 < 8; i2++) {
 			for (int j2 = 0; j2 < 8; j2++) {
 				if (l + i2 > 0 && l + i2 < 103 && l1 + j2 > 0 && l1 + j2 < 103) {
-					aclass11[k1].anIntArrayArray294[l + i2][l1 + j2] &= 0xfeffffff;
+					aclass11[k1].mCollisionMapData[l + i2][l1 + j2] &= 0xfeffffff;
 				}
 			}
 
@@ -855,7 +855,7 @@ final class ObjectManager {
 			for (int j1 = 0; j1 < 64; j1++) {
 				for (int k1 = 0; k1 < 64; k1++) {
 					if (j + j1 > 0 && j + j1 < 103 && i + k1 > 0 && i + k1 < 103) {
-						aclass11[i1].anIntArrayArray294[j + j1][i + k1] &= 0xfeffffff;
+						aclass11[i1].mCollisionMapData[j + j1][i + k1] &= 0xfeffffff;
 					}
 				}
 
@@ -1339,7 +1339,7 @@ final class ObjectManager {
 	private final int[] anIntArray128;
 	private final int[][][] anIntArrayArrayArray129;
 	private final byte[][][] aByteArrayArrayArray130;
-	static int anInt131;
+	static int plane;
 	private static int anInt133 = (int) (Math.random() * 33D) - 16;
 	private final byte[][][] aByteArrayArrayArray134;
 	private final int[][][] anIntArrayArrayArray135;

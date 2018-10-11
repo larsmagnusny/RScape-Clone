@@ -28,7 +28,7 @@ public final class RSInterface {
 			//if(rsInterface.type == 0)
 			//	System.out.println(rsInterface.parentID+":"+k);
 			rsInterface.atActionType = stream.readUnsignedByte();
-			rsInterface.anInt214 = stream.readUnsignedWord();
+			rsInterface.actionID = stream.readUnsignedWord();
 			rsInterface.width = stream.readUnsignedWord();
 			rsInterface.height = stream.readUnsignedWord();
 			rsInterface.aByte254 = (byte) stream.readUnsignedByte();
@@ -320,7 +320,7 @@ public final class RSInterface {
 	public Sprite sprites[];
 	public static RSInterface interfaceCache[];
 	public int anIntArray212[];
-	public int anInt214;
+	public int actionID;
 	public int spritesX[];
 	public int anInt216;
 	public int atActionType;

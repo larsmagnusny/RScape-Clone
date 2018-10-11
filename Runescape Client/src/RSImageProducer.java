@@ -16,7 +16,7 @@ final class RSImageProducer implements ImageProducer, ImageObserver {
 	public RSImageProducer(int i, int j, Component component) {
 		anInt316 = i;
 		anInt317 = j;
-		anIntArray315 = new int[i * j];
+		pixels = new int[i * j];
 		aColorModel318 = new DirectColorModel(32, 0xff0000, 65280, 255);
 		anImage320 = component.createImage(this);
 		method239();
@@ -29,7 +29,7 @@ final class RSImageProducer implements ImageProducer, ImageObserver {
 	}
 
 	public void initDrawingArea() {
-		DrawingArea.initDrawingArea(anInt317, anInt316, anIntArray315);
+		DrawingArea.initDrawingArea(anInt317, anInt316, pixels);
 	}
 
 	public void drawGraphics(int i, Graphics g, int k) {
@@ -70,7 +70,7 @@ final class RSImageProducer implements ImageProducer, ImageObserver {
 
 	private synchronized void method239() {
 		if (anImageConsumer319 != null) {
-			anImageConsumer319.setPixels(0, 0, anInt316, anInt317, aColorModel318, anIntArray315, 0, anInt316);
+			anImageConsumer319.setPixels(0, 0, anInt316, anInt317, aColorModel318, pixels, 0, anInt316);
 			anImageConsumer319.imageComplete(2);
 		}
 	}
@@ -80,7 +80,7 @@ final class RSImageProducer implements ImageProducer, ImageObserver {
 		return true;
 	}
 
-	public final int[] anIntArray315;
+	public final int[] pixels;
 	private final int anInt316;
 	private final int anInt317;
 	private final ColorModel aColorModel318;
