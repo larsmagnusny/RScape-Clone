@@ -221,3 +221,4 @@
 [2018/10/11] 17:28 username dropped 1 raw beef absX: 3030 absY: 3300
 [2018/10/11] 17:28 username dropped 1 cowhide absX: 3035 absY: 3300
 [2018/10/11] 17:28 username dropped 1 raw beef absX: 3035 absY: 3300
+[2018/10/12] 11:08 username dropped 1 copper ore absX: 3283 absY: 3368

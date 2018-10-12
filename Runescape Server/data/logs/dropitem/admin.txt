@@ -1,0 +1,6 @@
+[2018/10/12] 20:01 admin dropped 1 logs absX: 3101 absY: 3096
+[2018/10/12] 20:02 admin dropped 1 ashes absX: 3101 absY: 3093
+[2018/10/12] 20:03 admin dropped 1 logs absX: 3100 absY: 3094
+[2018/10/12] 22:18 admin dropped 1 logs absX: 3101 absY: 3095
+[2018/10/12] 22:18 admin dropped 1 ashes absX: 3101 absY: 3096
+[2018/10/12] 22:20 admin dropped 1 logs absX: 3101 absY: 3093

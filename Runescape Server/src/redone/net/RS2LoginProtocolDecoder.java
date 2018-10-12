@@ -231,7 +231,8 @@ public class RS2LoginProtocolDecoder extends CumulativeProtocolDecoder {
 				cl.saveFile = false;
 			} else {
 				for (int i = 0; i < cl.playerEquipment.length; i++) {
-					if (cl.playerEquipment[i] == 0) {
+					if (cl.playerEquipment[i] == 0)
+					{
 						cl.playerEquipment[i] = -1;
 						cl.playerEquipmentN[i] = 0;
 					}

@@ -181,23 +181,23 @@ public final class ItemDef {
 		team = 0;
 	}
 
-	public static ItemDef forID(int i) {
+	public static ItemDef forID(int itemIndex) {
 		for (int j = 0; j < 10; j++) {
-			if (cache[j].id == i) {
+			if (cache[j].id == itemIndex) {
 				return cache[j];
 			}
 		}
 
 		cacheIndex = (cacheIndex + 1) % 10;
 		ItemDef itemDef = cache[cacheIndex];
-		stream.currentOffset = streamIndices[i];
-		itemDef.id = i;
+		stream.currentOffset = streamIndices[itemIndex];
+		itemDef.id = itemIndex;
 		itemDef.setDefaults();
 		itemDef.readValues(stream);
 		if (itemDef.certTemplateID != -1) {
 			itemDef.toNote();
 		}
-		if (i == 6543) {
+		if (itemIndex == 6543) {
 			itemDef.name = "Magical Lamp";
 			itemDef.description = "I wonder what will happen when I rub this...".getBytes();
 		}
@@ -208,7 +208,7 @@ public final class ItemDef {
 			itemDef.actions = null;
 			itemDef.team = 0;
 		}
-		switch (i) {
+		switch (itemIndex) {
 		case 9747:
 			itemDef.actions = new String[5];
 			itemDef.actions[1] = "Wear";
@@ -2048,9 +2048,9 @@ public final class ItemDef {
 		stackable = true;
 	}
 
-	public static Sprite getSprite(int i, int j, int k) {
+	public static Sprite getSprite(int itemID, int j, int k) {
 		if (k == 0) {
-			Sprite sprite = (Sprite) mruNodes1.insertFromCache(i);
+			Sprite sprite = (Sprite) mruNodes1.insertFromCache(itemID);
 			if (sprite != null && sprite.trimHeight != j && sprite.trimHeight != -1) {
 				sprite.unlink();
 				sprite = null;
@@ -2059,7 +2059,7 @@ public final class ItemDef {
 				return sprite;
 			}
 		}
-		ItemDef itemDef = forID(i);
+		ItemDef itemDef = forID(itemID);
 		if (itemDef.stackIDs == null) {
 			j = -1;
 		}
@@ -2167,7 +2167,7 @@ public final class ItemDef {
 			sprite.trimHeight = j6;
 		}
 		if (k == 0) {
-			mruNodes1.removeFromCache(sprite2, i);
+			mruNodes1.removeFromCache(sprite2, itemID);
 		}
 		DrawingArea.initDrawingArea(j2, i2, ai1);
 		DrawingArea.setDrawingArea(j3, k2, l2, i3);
