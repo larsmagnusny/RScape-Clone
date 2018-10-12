@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2018 at 04:37 PM
+-- Generation Time: Oct 12, 2018 at 10:31 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -21,6 +21,499 @@ SET time_zone = "+00:00";
 --
 -- Database: `runescape`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `UserID` int(11) NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`UserID`, `Username`, `Password`) VALUES
+(1, 'admin', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character`
+--
+
+CREATE TABLE `character` (
+  `UserID` int(11) NOT NULL,
+  `characterHeight` int(11) NOT NULL,
+  `characterPosx` int(11) NOT NULL,
+  `characterPosy` int(11) NOT NULL,
+  `characterRights` int(11) NOT NULL,
+  `hasStarter` tinyint(1) NOT NULL,
+  `bankPin1` tinyint(4) NOT NULL,
+  `bankPin2` tinyint(4) NOT NULL,
+  `bankPin3` tinyint(4) NOT NULL,
+  `bankPin4` tinyint(4) NOT NULL,
+  `hasBankpin` tinyint(1) NOT NULL,
+  `pinRegisteredDeleteDay` int(11) NOT NULL,
+  `requestPinDelete` tinyint(1) NOT NULL,
+  `lastLoginDate` int(11) NOT NULL,
+  `setPin` tinyint(1) NOT NULL,
+  `hasPaid` tinyint(1) NOT NULL,
+  `lostCannon` tinyint(1) NOT NULL,
+  `cannonX` int(11) NOT NULL,
+  `cannonY` int(11) NOT NULL,
+  `myBalls` int(11) NOT NULL,
+  `poison` tinyint(1) NOT NULL,
+  `spiritTree` tinyint(1) NOT NULL,
+  `npcCanAttack` tinyint(1) NOT NULL,
+  `rope` tinyint(1) NOT NULL,
+  `rope2` tinyint(1) NOT NULL,
+  `recievedMask` tinyint(1) NOT NULL,
+  `recievedReward` tinyint(1) NOT NULL,
+  `isBotting` tinyint(1) NOT NULL,
+  `brightness` int(11) NOT NULL,
+  `closeTutorialInterface` tinyint(1) NOT NULL,
+  `canWalkTutorial` tinyint(1) NOT NULL,
+  `village` tinyint(1) NOT NULL,
+  `lastThieve` int(11) NOT NULL,
+  `homeTele` int(11) NOT NULL,
+  `strongHold` tinyint(1) NOT NULL,
+  `characterEnergy` int(11) NOT NULL,
+  `crystalBowShots` int(11) NOT NULL,
+  `splitChat` tinyint(1) NOT NULL,
+  `canSpeak` tinyint(1) NOT NULL,
+  `barrowsNpcs_0` int(11) NOT NULL,
+  `barrowsNpcs_1` int(11) NOT NULL,
+  `barrowsNpcs_2` int(11) NOT NULL,
+  `barrowsNpcs_3` int(11) NOT NULL,
+  `barrowsNpcs_4` int(11) NOT NULL,
+  `barrowsNpcs_5` int(11) NOT NULL,
+  `questStages` int(11) NOT NULL,
+  `SlayerMaster` int(11) NOT NULL,
+  `music_0` tinyint(1) NOT NULL,
+  `music_1` tinyint(1) NOT NULL,
+  `music_2` tinyint(1) NOT NULL,
+  `music_3` tinyint(1) NOT NULL,
+  `music_4` tinyint(1) NOT NULL,
+  `music_5` tinyint(1) NOT NULL,
+  `music_6` tinyint(1) NOT NULL,
+  `music_7` tinyint(1) NOT NULL,
+  `music_8` tinyint(1) NOT NULL,
+  `music_9` tinyint(1) NOT NULL,
+  `music_10` tinyint(1) NOT NULL,
+  `music_11` tinyint(1) NOT NULL,
+  `music_12` tinyint(1) NOT NULL,
+  `music_13` tinyint(1) NOT NULL,
+  `music_14` tinyint(1) NOT NULL,
+  `music_15` tinyint(1) NOT NULL,
+  `music_16` tinyint(1) NOT NULL,
+  `music_17` tinyint(1) NOT NULL,
+  `music_18` tinyint(1) NOT NULL,
+  `music_19` tinyint(1) NOT NULL,
+  `music_20` tinyint(1) NOT NULL,
+  `music_21` tinyint(1) NOT NULL,
+  `music_22` tinyint(1) NOT NULL,
+  `music_23` tinyint(1) NOT NULL,
+  `music_24` tinyint(1) NOT NULL,
+  `music_25` tinyint(1) NOT NULL,
+  `music_26` tinyint(1) NOT NULL,
+  `music_27` tinyint(1) NOT NULL,
+  `music_28` tinyint(1) NOT NULL,
+  `music_29` tinyint(1) NOT NULL,
+  `music_30` tinyint(1) NOT NULL,
+  `music_31` tinyint(1) NOT NULL,
+  `music_32` tinyint(1) NOT NULL,
+  `music_33` tinyint(1) NOT NULL,
+  `music_34` tinyint(1) NOT NULL,
+  `music_35` tinyint(1) NOT NULL,
+  `music_36` tinyint(1) NOT NULL,
+  `music_37` tinyint(1) NOT NULL,
+  `music_38` tinyint(1) NOT NULL,
+  `music_39` tinyint(1) NOT NULL,
+  `music_40` tinyint(1) NOT NULL,
+  `music_41` tinyint(1) NOT NULL,
+  `music_42` tinyint(1) NOT NULL,
+  `music_43` tinyint(1) NOT NULL,
+  `music_44` tinyint(1) NOT NULL,
+  `music_45` tinyint(1) NOT NULL,
+  `music_46` tinyint(1) NOT NULL,
+  `music_47` tinyint(1) NOT NULL,
+  `music_48` tinyint(1) NOT NULL,
+  `music_49` tinyint(1) NOT NULL,
+  `randomActions` int(11) NOT NULL,
+  `blackMarks` int(11) NOT NULL,
+  `tutorialProgress` int(11) NOT NULL,
+  `skullTimer` int(11) NOT NULL,
+  `recoilHits` int(11) NOT NULL,
+  `lastX` int(11) NOT NULL,
+  `lastY` int(11) NOT NULL,
+  `lastH` int(11) NOT NULL,
+  `removedTask0` int(11) NOT NULL,
+  `removedTask1` int(11) NOT NULL,
+  `removedTask2` int(11) NOT NULL,
+  `removedTask3` int(11) NOT NULL,
+  `creationAddress` varchar(60) DEFAULT NULL,
+  `hasNpc` tinyint(1) NOT NULL,
+  `summonId` int(11) NOT NULL,
+  `thankedForDonation` int(11) NOT NULL,
+  `membership` tinyint(1) NOT NULL,
+  `questPoints` int(11) NOT NULL,
+  `bananas` int(11) NOT NULL,
+  `magicBook` int(11) NOT NULL,
+  `specialAmount` double NOT NULL,
+  `musicOn` tinyint(1) NOT NULL,
+  `needsNewTask` tinyint(1) NOT NULL,
+  `luthas` tinyint(1) NOT NULL,
+  `selectedCoffin` int(11) NOT NULL,
+  `runeMist` int(11) NOT NULL,
+  `cookAss` int(11) NOT NULL,
+  `pirateTreasure` int(11) NOT NULL,
+  `ptjob` int(11) NOT NULL,
+  `doricQuest` int(11) NOT NULL,
+  `dragonSlayerQuestStage` int(11) NOT NULL,
+  `impsC` int(11) NOT NULL,
+  `knightS` int(11) NOT NULL,
+  `sheepShear` int(11) NOT NULL,
+  `romeoJuliet` int(11) NOT NULL,
+  `gertCat` int(11) NOT NULL,
+  `cwGames` int(11) NOT NULL,
+  `witchspot` int(11) NOT NULL,
+  `restGhost` int(11) NOT NULL,
+  `vampSlayer` int(11) NOT NULL,
+  `RatDied2` tinyint(1) NOT NULL,
+  `teleblockLength` int(11) NOT NULL,
+  `pcPoints` int(11) NOT NULL,
+  `lastYell` int(11) NOT NULL,
+  `slayerTask` int(11) NOT NULL,
+  `taskAmount` int(11) NOT NULL,
+  `magePoints` int(11) NOT NULL,
+  `autoRet` int(11) NOT NULL,
+  `barrowsKillCount` int(11) NOT NULL,
+  `slayerPoints` int(11) NOT NULL,
+  `flagged` tinyint(1) NOT NULL,
+  `wave` int(11) NOT NULL,
+  `gwkc` int(11) NOT NULL,
+  `isRunning` tinyint(1) NOT NULL,
+  `fightMode` int(11) NOT NULL,
+  `void_0` int(11) NOT NULL,
+  `void_1` int(11) NOT NULL,
+  `void_2` int(11) NOT NULL,
+  `void_3` int(11) NOT NULL,
+  `void_4` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character`
+--
+
+INSERT INTO `character` (`UserID`, `characterHeight`, `characterPosx`, `characterPosy`, `characterRights`, `hasStarter`, `bankPin1`, `bankPin2`, `bankPin3`, `bankPin4`, `hasBankpin`, `pinRegisteredDeleteDay`, `requestPinDelete`, `lastLoginDate`, `setPin`, `hasPaid`, `lostCannon`, `cannonX`, `cannonY`, `myBalls`, `poison`, `spiritTree`, `npcCanAttack`, `rope`, `rope2`, `recievedMask`, `recievedReward`, `isBotting`, `brightness`, `closeTutorialInterface`, `canWalkTutorial`, `village`, `lastThieve`, `homeTele`, `strongHold`, `characterEnergy`, `crystalBowShots`, `splitChat`, `canSpeak`, `barrowsNpcs_0`, `barrowsNpcs_1`, `barrowsNpcs_2`, `barrowsNpcs_3`, `barrowsNpcs_4`, `barrowsNpcs_5`, `questStages`, `SlayerMaster`, `music_0`, `music_1`, `music_2`, `music_3`, `music_4`, `music_5`, `music_6`, `music_7`, `music_8`, `music_9`, `music_10`, `music_11`, `music_12`, `music_13`, `music_14`, `music_15`, `music_16`, `music_17`, `music_18`, `music_19`, `music_20`, `music_21`, `music_22`, `music_23`, `music_24`, `music_25`, `music_26`, `music_27`, `music_28`, `music_29`, `music_30`, `music_31`, `music_32`, `music_33`, `music_34`, `music_35`, `music_36`, `music_37`, `music_38`, `music_39`, `music_40`, `music_41`, `music_42`, `music_43`, `music_44`, `music_45`, `music_46`, `music_47`, `music_48`, `music_49`, `randomActions`, `blackMarks`, `tutorialProgress`, `skullTimer`, `recoilHits`, `lastX`, `lastY`, `lastH`, `removedTask0`, `removedTask1`, `removedTask2`, `removedTask3`, `creationAddress`, `hasNpc`, `summonId`, `thankedForDonation`, `membership`, `questPoints`, `bananas`, `magicBook`, `specialAmount`, `musicOn`, `needsNewTask`, `luthas`, `selectedCoffin`, `runeMist`, `cookAss`, `pirateTreasure`, `ptjob`, `doricQuest`, `dragonSlayerQuestStage`, `impsC`, `knightS`, `sheepShear`, `romeoJuliet`, `gertCat`, `cwGames`, `witchspot`, `restGhost`, `vampSlayer`, `RatDied2`, `teleblockLength`, `pcPoints`, `lastYell`, `slayerTask`, `taskAmount`, `magePoints`, `autoRet`, `barrowsKillCount`, `slayerPoints`, `flagged`, `wave`, `gwkc`, `isRunning`, `fightMode`, `void_0`, `void_1`, `void_2`, `void_3`, `void_4`) VALUES
+(1, 0, 3107, 3107, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20180912, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 100, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 3107, 3107, 0, -1, -1, -1, -1, 'Somethingfun', 0, 0, 0, 0, 0, 0, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_bank`
+--
+
+CREATE TABLE `character_bank` (
+  `UserID` int(11) NOT NULL,
+  `slotNum` int(11) NOT NULL,
+  `ItemID` int(11) DEFAULT NULL,
+  `ItemAmount` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_equipment`
+--
+
+CREATE TABLE `character_equipment` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) DEFAULT NULL,
+  `slot_1` int(11) DEFAULT NULL,
+  `slot_2` int(11) DEFAULT NULL,
+  `slot_3` int(11) DEFAULT NULL,
+  `slot_4` int(11) DEFAULT NULL,
+  `slot_5` int(11) DEFAULT NULL,
+  `slot_6` int(11) DEFAULT NULL,
+  `slot_7` int(11) DEFAULT NULL,
+  `slot_8` int(11) DEFAULT NULL,
+  `slot_9` int(11) DEFAULT NULL,
+  `slot_10` int(11) DEFAULT NULL,
+  `slot_11` int(11) DEFAULT NULL,
+  `slot_12` int(11) DEFAULT NULL,
+  `slot_13` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_equipment`
+--
+
+INSERT INTO `character_equipment` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`) VALUES
+(1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_equipmentn`
+--
+
+CREATE TABLE `character_equipmentn` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) NOT NULL,
+  `slot_1` int(11) NOT NULL,
+  `slot_2` int(11) NOT NULL,
+  `slot_3` int(11) NOT NULL,
+  `slot_4` int(11) NOT NULL,
+  `slot_5` int(11) NOT NULL,
+  `slot_6` int(11) NOT NULL,
+  `slot_7` int(11) NOT NULL,
+  `slot_8` int(11) NOT NULL,
+  `slot_9` int(11) NOT NULL,
+  `slot_10` int(11) NOT NULL,
+  `slot_11` int(11) NOT NULL,
+  `slot_12` int(11) NOT NULL,
+  `slot_13` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_equipmentn`
+--
+
+INSERT INTO `character_equipmentn` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`) VALUES
+(1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_friendslist`
+--
+
+CREATE TABLE `character_friendslist` (
+  `UserID` int(11) NOT NULL,
+  `FriendID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_ignorelist`
+--
+
+CREATE TABLE `character_ignorelist` (
+  `UserID` int(11) NOT NULL,
+  `IgnoredPlayerID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_inventory`
+--
+
+CREATE TABLE `character_inventory` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) DEFAULT NULL,
+  `slot_1` int(11) DEFAULT NULL,
+  `slot_2` int(11) DEFAULT NULL,
+  `slot_3` int(11) DEFAULT NULL,
+  `slot_4` int(11) DEFAULT NULL,
+  `slot_5` int(11) DEFAULT NULL,
+  `slot_6` int(11) DEFAULT NULL,
+  `slot_7` int(11) DEFAULT NULL,
+  `slot_8` int(11) DEFAULT NULL,
+  `slot_9` int(11) DEFAULT NULL,
+  `slot_10` int(11) DEFAULT NULL,
+  `slot_11` int(11) DEFAULT NULL,
+  `slot_12` int(11) DEFAULT NULL,
+  `slot_13` int(11) DEFAULT NULL,
+  `slot_14` int(11) DEFAULT NULL,
+  `slot_15` int(11) DEFAULT NULL,
+  `slot_16` int(11) DEFAULT NULL,
+  `slot_17` int(11) DEFAULT NULL,
+  `slot_18` int(11) DEFAULT NULL,
+  `slot_19` int(11) DEFAULT NULL,
+  `slot_20` int(11) DEFAULT NULL,
+  `slot_21` int(11) DEFAULT NULL,
+  `slot_22` int(11) DEFAULT NULL,
+  `slot_23` int(11) DEFAULT NULL,
+  `slot_24` int(11) DEFAULT NULL,
+  `slot_25` int(11) DEFAULT NULL,
+  `slot_26` int(11) DEFAULT NULL,
+  `slot_27` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_inventory`
+--
+
+INSERT INTO `character_inventory` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`, `slot_14`, `slot_15`, `slot_16`, `slot_17`, `slot_18`, `slot_19`, `slot_20`, `slot_21`, `slot_22`, `slot_23`, `slot_24`, `slot_25`, `slot_26`, `slot_27`) VALUES
+(1, 591, 1352, 304, 324, 1512, 1512, 1512, 316, 1512, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_inventoryn`
+--
+
+CREATE TABLE `character_inventoryn` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) NOT NULL,
+  `slot_1` int(11) NOT NULL,
+  `slot_2` int(11) NOT NULL,
+  `slot_3` int(11) NOT NULL,
+  `slot_4` int(11) NOT NULL,
+  `slot_5` int(11) NOT NULL,
+  `slot_6` int(11) NOT NULL,
+  `slot_7` int(11) NOT NULL,
+  `slot_8` int(11) NOT NULL,
+  `slot_9` int(11) NOT NULL,
+  `slot_10` int(11) NOT NULL,
+  `slot_11` int(11) NOT NULL,
+  `slot_12` int(11) NOT NULL,
+  `slot_13` int(11) NOT NULL,
+  `slot_14` int(11) NOT NULL,
+  `slot_15` int(11) NOT NULL,
+  `slot_16` int(11) NOT NULL,
+  `slot_17` int(11) NOT NULL,
+  `slot_18` int(11) NOT NULL,
+  `slot_19` int(11) NOT NULL,
+  `slot_20` int(11) NOT NULL,
+  `slot_21` int(11) NOT NULL,
+  `slot_22` int(11) NOT NULL,
+  `slot_23` int(11) NOT NULL,
+  `slot_24` int(11) NOT NULL,
+  `slot_25` int(11) NOT NULL,
+  `slot_26` int(11) NOT NULL,
+  `slot_27` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_inventoryn`
+--
+
+INSERT INTO `character_inventoryn` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`, `slot_14`, `slot_15`, `slot_16`, `slot_17`, `slot_18`, `slot_19`, `slot_20`, `slot_21`, `slot_22`, `slot_23`, `slot_24`, `slot_25`, `slot_26`, `slot_27`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_look`
+--
+
+CREATE TABLE `character_look` (
+  `UserID` int(11) NOT NULL,
+  `look_0` int(11) DEFAULT NULL,
+  `look_1` int(11) DEFAULT NULL,
+  `look_2` int(11) DEFAULT NULL,
+  `look_3` int(11) DEFAULT NULL,
+  `look_4` int(11) DEFAULT NULL,
+  `look_5` int(11) DEFAULT NULL,
+  `look_6` int(11) DEFAULT NULL,
+  `look_7` int(11) DEFAULT NULL,
+  `look_8` int(11) DEFAULT NULL,
+  `look_9` int(11) DEFAULT NULL,
+  `look_10` int(11) DEFAULT NULL,
+  `look_11` int(11) DEFAULT NULL,
+  `look_12` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_look`
+--
+
+INSERT INTO `character_look` (`UserID`, `look_0`, `look_1`, `look_2`, `look_3`, `look_4`, `look_5`, `look_6`, `look_7`, `look_8`, `look_9`, `look_10`, `look_11`, `look_12`) VALUES
+(1, 0, 7, 25, 29, 35, 39, 44, 14, 7, 8, 9, 5, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_skillslevel`
+--
+
+CREATE TABLE `character_skillslevel` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) NOT NULL,
+  `slot_1` int(11) NOT NULL,
+  `slot_2` int(11) NOT NULL,
+  `slot_3` int(11) NOT NULL,
+  `slot_4` int(11) NOT NULL,
+  `slot_5` int(11) NOT NULL,
+  `slot_6` int(11) NOT NULL,
+  `slot_7` int(11) NOT NULL,
+  `slot_8` int(11) NOT NULL,
+  `slot_9` int(11) NOT NULL,
+  `slot_10` int(11) NOT NULL,
+  `slot_11` int(11) NOT NULL,
+  `slot_12` int(11) NOT NULL,
+  `slot_13` int(11) NOT NULL,
+  `slot_14` int(11) NOT NULL,
+  `slot_15` int(11) NOT NULL,
+  `slot_16` int(11) NOT NULL,
+  `slot_17` int(11) NOT NULL,
+  `slot_18` int(11) NOT NULL,
+  `slot_19` int(11) NOT NULL,
+  `slot_20` int(11) NOT NULL,
+  `slot_21` int(11) NOT NULL,
+  `slot_22` int(11) NOT NULL,
+  `slot_23` int(11) NOT NULL,
+  `slot_24` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_skillslevel`
+--
+
+INSERT INTO `character_skillslevel` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`, `slot_14`, `slot_15`, `slot_16`, `slot_17`, `slot_18`, `slot_19`, `slot_20`, `slot_21`, `slot_22`, `slot_23`, `slot_24`) VALUES
+(1, 1, 1, 1, 10, 1, 1, 1, 2, 3, 1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `character_skillsxp`
+--
+
+CREATE TABLE `character_skillsxp` (
+  `UserID` int(11) NOT NULL,
+  `slot_0` int(11) NOT NULL,
+  `slot_1` int(11) NOT NULL,
+  `slot_2` int(11) NOT NULL,
+  `slot_3` int(11) NOT NULL,
+  `slot_4` int(11) NOT NULL,
+  `slot_5` int(11) NOT NULL,
+  `slot_6` int(11) NOT NULL,
+  `slot_7` int(11) NOT NULL,
+  `slot_8` int(11) NOT NULL,
+  `slot_9` int(11) NOT NULL,
+  `slot_10` int(11) NOT NULL,
+  `slot_11` int(11) NOT NULL,
+  `slot_12` int(11) NOT NULL,
+  `slot_13` int(11) NOT NULL,
+  `slot_14` int(11) NOT NULL,
+  `slot_15` int(11) NOT NULL,
+  `slot_16` int(11) NOT NULL,
+  `slot_17` int(11) NOT NULL,
+  `slot_18` int(11) NOT NULL,
+  `slot_19` int(11) NOT NULL,
+  `slot_20` int(11) NOT NULL,
+  `slot_21` int(11) NOT NULL,
+  `slot_22` int(11) NOT NULL,
+  `slot_23` int(11) NOT NULL,
+  `slot_24` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `character_skillsxp`
+--
+
+INSERT INTO `character_skillsxp` (`UserID`, `slot_0`, `slot_1`, `slot_2`, `slot_3`, `slot_4`, `slot_5`, `slot_6`, `slot_7`, `slot_8`, `slot_9`, `slot_10`, `slot_11`, `slot_12`, `slot_13`, `slot_14`, `slot_15`, `slot_16`, `slot_17`, `slot_18`, `slot_19`, `slot_20`, `slot_21`, `slot_22`, `slot_23`, `slot_24`) VALUES
+(1, 0, 0, 0, 1300, 0, 0, 0, 150, 250, 0, 150, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -18681,6 +19174,80 @@ INSERT INTO `spawn_config` (`NpcID`, `SpawnX`, `SpawnY`, `Height`, `Walk`, `MaxH
 --
 
 --
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character`
+--
+ALTER TABLE `character`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_bank`
+--
+ALTER TABLE `character_bank`
+  ADD PRIMARY KEY (`UserID`,`slotNum`);
+
+--
+-- Indexes for table `character_equipment`
+--
+ALTER TABLE `character_equipment`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_equipmentn`
+--
+ALTER TABLE `character_equipmentn`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_friendslist`
+--
+ALTER TABLE `character_friendslist`
+  ADD PRIMARY KEY (`UserID`,`FriendID`) USING BTREE,
+  ADD KEY `CharacterFriendsListFriendIDConstraint` (`FriendID`);
+
+--
+-- Indexes for table `character_ignorelist`
+--
+ALTER TABLE `character_ignorelist`
+  ADD PRIMARY KEY (`UserID`,`IgnoredPlayerID`),
+  ADD KEY `CharacterIgnoreListIgnoreIDConstraint` (`IgnoredPlayerID`);
+
+--
+-- Indexes for table `character_inventory`
+--
+ALTER TABLE `character_inventory`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_inventoryn`
+--
+ALTER TABLE `character_inventoryn`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_look`
+--
+ALTER TABLE `character_look`
+  ADD PRIMARY KEY (`UserID`) USING BTREE;
+
+--
+-- Indexes for table `character_skillslevel`
+--
+ALTER TABLE `character_skillslevel`
+  ADD PRIMARY KEY (`UserID`);
+
+--
+-- Indexes for table `character_skillsxp`
+--
+ALTER TABLE `character_skillsxp`
+  ADD PRIMARY KEY (`UserID`);
+
+--
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
@@ -18697,6 +19264,88 @@ ALTER TABLE `npc_cfg`
 --
 ALTER TABLE `prices`
   ADD PRIMARY KEY (`ItemID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `character`
+--
+ALTER TABLE `character`
+  ADD CONSTRAINT `AccountCharacterUserIDConstaint` FOREIGN KEY (`UserID`) REFERENCES `account` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_bank`
+--
+ALTER TABLE `character_bank`
+  ADD CONSTRAINT `CharacterBankUserIDConstaint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_equipment`
+--
+ALTER TABLE `character_equipment`
+  ADD CONSTRAINT `CharacterEquipmentUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_equipmentn`
+--
+ALTER TABLE `character_equipmentn`
+  ADD CONSTRAINT `CharacterEquipment_2UserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_friendslist`
+--
+ALTER TABLE `character_friendslist`
+  ADD CONSTRAINT `CharacterFriendsListFriendIDConstraint` FOREIGN KEY (`FriendID`) REFERENCES `character` (`UserID`),
+  ADD CONSTRAINT `CharacterFriendsListUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`);
+
+--
+-- Constraints for table `character_ignorelist`
+--
+ALTER TABLE `character_ignorelist`
+  ADD CONSTRAINT `CharacterIgnoreListIgnoreIDConstraint` FOREIGN KEY (`IgnoredPlayerID`) REFERENCES `character` (`UserID`),
+  ADD CONSTRAINT `CharacterIgnoreListUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`);
+
+--
+-- Constraints for table `character_inventory`
+--
+ALTER TABLE `character_inventory`
+  ADD CONSTRAINT `CharacterInventoryUserIDConstaint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_inventoryn`
+--
+ALTER TABLE `character_inventoryn`
+  ADD CONSTRAINT `CharacterInventory2UserIDConstaint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_look`
+--
+ALTER TABLE `character_look`
+  ADD CONSTRAINT `CharacterCharacterLookUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_skillslevel`
+--
+ALTER TABLE `character_skillslevel`
+  ADD CONSTRAINT `CharacterCharacterSkillsLevelUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
+
+--
+-- Constraints for table `character_skillsxp`
+--
+ALTER TABLE `character_skillsxp`
+  ADD CONSTRAINT `CharacterCharacterSkillsXPUserIDConstraint` FOREIGN KEY (`UserID`) REFERENCES `character` (`UserID`) ON DELETE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
