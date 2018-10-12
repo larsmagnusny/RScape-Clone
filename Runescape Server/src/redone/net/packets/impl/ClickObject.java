@@ -15,10 +15,6 @@ import redone.game.players.Client;
 import redone.net.packets.PacketType;
 
 public class ClickObject implements PacketType {
-
-	public static final int FIRST_CLICK = 132, SECOND_CLICK = 252,
-			THIRD_CLICK = 70, FOURTH_CLICK = 234;
-
 	@Override
 	public void processPacket(final Client player, int packetType,
 			int packetSize) {

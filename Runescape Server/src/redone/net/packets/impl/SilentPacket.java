@@ -9,7 +9,8 @@ import redone.net.packets.PacketType;
 public class SilentPacket implements PacketType {
 
 	@Override
-	public void processPacket(Client c, int packetType, int packetSize) {
-
+	public void processPacket(Client c, int packetType, int packetSize)
+	{
+			System.out.println("Got SilentPacket: " + packetType + " Size: " + packetSize);
 	}
 }

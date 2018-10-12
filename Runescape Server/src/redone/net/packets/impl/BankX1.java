@@ -6,10 +6,8 @@ import redone.net.packets.PacketType;
 /**
  * Bank X Items
  **/
-public class BankX1 implements PacketType {
-
-	public static final int PART1 = 135;
-	public static final int PART2 = 208;
+public class BankX1 implements PacketType
+{
 	public int XremoveSlot, XinterfaceID, XremoveID, Xamount;
 
 	@Override

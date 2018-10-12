@@ -13,9 +13,6 @@ import redone.net.packets.PacketType;
  * Attack Player
  **/
 public class AttackPlayer implements PacketType {
-
-	public static final int ATTACK_PLAYER = 73, MAGE_PLAYER = 249;
-
 	@Override
 	public void processPacket(Client c, int packetType, int packetSize) {
 		c.playerIndex = 0;

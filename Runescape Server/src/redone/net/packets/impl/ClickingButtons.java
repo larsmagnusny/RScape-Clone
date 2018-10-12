@@ -43,7 +43,8 @@ import redone.util.Misc;
 public class ClickingButtons implements PacketType {
 
 	@Override
-	public void processPacket(final Client player, int packetType, int packetSize) {
+	public void processPacket(final Client player, int packetType, int packetSize)
+	{
 		int actionButtonId = Misc.hexToInt(player.getInStream().buffer, 0, packetSize);
 		player.getGlassBlowing().handleActionButtin(actionButtonId);
 		GnomeGlider.flightButtons(player, actionButtonId);
@@ -2626,5 +2627,4 @@ public class ClickingButtons implements PacketType {
 
 		}
 	}
-
 }

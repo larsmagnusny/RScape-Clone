@@ -6,7 +6,11 @@ public class Constants {
 
 	public final static String SERVER_NAME = "Runescape Server", SERVER_VERSION = "Server Stage v " + Constants.TEST_VERSION + ".";
 	public final static double TEST_VERSION = 1.14;
-	public static int BANK_SIZE = 4096;
+	
+	// You must change this limit in client as well
+	public static int BANK_SIZE = 300;
+	
+	
 	public final static int ITEM_LIMIT = 15000, MAXITEM_AMOUNT = Integer.MAX_VALUE, CLIENT_VERSION = 999999,
 			WORLD = 1, IPS_ALLOWED = 3, CONNECTION_DELAY = 100,
 			MESSAGE_DELAY = 6000, MAX_PLAYERS = 3000, REQ_AMOUNT = 150;
